@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>EastFarside — Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:   #1a1a2e;
+      --amber: #c8882a;
+      --muted: #888;
+      --bg:    #f9f6f0;
+    }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 40px 24px;
+    }
+
+    /* Globe animation */
+    .globe {
+      width: 72px; height: 72px;
+      background: var(--ink);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 28px;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%       { transform: scale(1.06); opacity: .85; }
+    }
+
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 700;
+      color: var(--ink); letter-spacing: .02em;
+      margin-bottom: 6px;
+    }
+    .tagline {
+      font-size: .85rem; color: var(--muted);
+      letter-spacing: .08em; text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+
+    .headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700; color: var(--ink);
+      line-height: 1.2; margin-bottom: 18px;
+    }
+    .headline em { color: var(--amber); font-style: italic; }
+
+    .sub {
+      font-size: .95rem; color: var(--muted);
+      line-height: 1.8; max-width: 480px;
+      margin: 0 auto 48px;
+    }
+
+    /* Language toggle */
+    .lang-row {
+      display: flex; gap: 8px;
+      justify-content: center; margin-bottom: 48px;
+    }
+    .lang-btn {
+      background: none; border: 1px solid var(--muted);
+      border-radius: 20px; padding: 4px 16px;
+      font-size: .78rem; font-weight: 600;
+      color: var(--muted); cursor: pointer;
+      transition: all .2s;
+    }
+    .lang-btn.active {
+      background: var(--ink); border-color: var(--ink);
+      color: #fff;
+    }
+
+    .divider {
+      width: 40px; height: 2px;
+      background: var(--amber);
+      margin: 0 auto 48px;
+    }
+
+    .footer {
+      font-size: .72rem; color: var(--muted);
+      position: absolute; bottom: 28px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="globe">🌏</div>
+
+  <div class="logo-text">EastFarside</div>
+  <div class="tagline" data-lang="en">Asia Travel Guides</div>
+  <div class="tagline" data-lang="es">Guías de Viaje por Asia</div>
+
+  <div class="divider"></div>
+
+  <h1 class="headline" data-lang="en">
+    We're getting ready<br>for your next <em>adventure.</em>
+  </h1>
+  <h1 class="headline" data-lang="es">
+    Nos estamos preparando<br>para tu próxima <em>aventura.</em>
+  </h1>
+
+  <p class="sub" data-lang="en">
+    EastFarside is currently under maintenance.<br>
+    We'll be back shortly with fresh travel guides for Asia.
+  </p>
+  <p class="sub" data-lang="es">
+    EastFarside está actualmente en mantenimiento.<br>
+    Volvemos pronto con nuevas guías de viaje por Asia.
+  </p>
+
+  <div class="lang-row">
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn"        id="btn-es" onclick="setLang('es')">ES</button>
+  </div>
+
+  <p class="footer">&copy; 2026 EastFarside. All rights reserved.</p>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      localStorage.setItem('ef-lang', lang);
+    }
+    const s = localStorage.getItem('ef-lang') || 'en';
+    setLang(s);
+  </script>
+</body>
+</html>
