@@ -1,0 +1,34 @@
+# ============================================================
+# Blog_EastFarside — .gitignore
+# 画像・スタイル・記事は全てコミット対象。
+# 機密情報・一時ファイルのみ除外する。
+# ============================================================
+
+# 機密情報
+.env
+*.env.local
+secrets/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# 一時ファイル
+*.tmp
+*.bak
+*.swp
+*~
+
+# Node（将来的なビルドツール導入時）
+node_modules/
+dist/
+.cache/
+
+# Python（ローカル作業用スクリプトが入る場合）
+__pycache__/
+*.pyc

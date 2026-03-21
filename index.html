@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EastFarside — Curated East & Southeast Asia travel guides. Model courses for families, couples, girls trips and senior travelers." />
+  <title>EastFarside | East & Southeast Asia Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Hero Slideshow ── */
+    .hero {
+      position: relative;
+      height: 100vh; min-height: 700px;
+      overflow: hidden;
+    }
+    .slides-wrap {
+      position: absolute; inset: 0;
+    }
+    .slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      /* parallax: will-change + transform driven by JS */
+      will-change: transform, opacity;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+    .slide.active { opacity: 1; }
+    .slide-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(26,26,46,.18) 0%,
+        rgba(26,26,46,.35) 45%,
+        rgba(26,26,46,.72) 80%,
+        rgba(26,26,46,.88) 100%
+      );
+    }
+
+    /* Slide indicators */
+    .slide-dots {
+      position: absolute; bottom: 146px; left: 50%; transform: translateX(-50%);
+      z-index: 5;
+      display: flex; gap: 8px;
+    }
+    .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(255,255,255,.35);
+      cursor: pointer; transition: background .3s, transform .3s;
+    }
+    .dot.active { background: #fff; transform: scale(1.35); }
+
+    /* ── Hero Content ── */
+    .hero-content {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 4;
+      padding-bottom: 48px; text-align: center;
+    }
+    .hero-eyebrow {
+      color: rgba(255,255,255,.6); font-size: .73rem;
+      letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+      color: #fff; font-weight: 600; line-height: 1.1;
+      letter-spacing: -.5px; margin-bottom: 36px;
+    }
+    .hero-tagline em {
+      font-style: italic;
+      background: linear-gradient(120deg, #f5d88a, #c8882a);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Filter Bar ── */
+    .filter-bar {
+      max-width: 820px; margin: 0 auto;
+      background: rgba(245,243,239,.92);
+      backdrop-filter: blur(20px);
+      border-radius: 14px; padding: 18px 22px;
+      box-shadow: 0 10px 48px rgba(0,0,0,.22);
+      display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 12px;
+      align-items: end;
+    }
+    .filter-group label {
+      display: block; font-size: .7rem; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 6px;
+    }
+    .filter-select {
+      width: 100%; padding: 10px 14px;
+      border-radius: 8px; border: 1.5px solid var(--border);
+      background: var(--cream); font-family: 'Inter', sans-serif;
+      font-size: .88rem; color: var(--ink); appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%237c7c9a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center;
+      cursor: pointer; transition: border-color .2s;
+    }
+    .filter-select:focus { outline: none; border-color: var(--amber); }
+    .filter-btn {
+      padding: 11px 26px; background: var(--amber); color: #fff;
+      border: none; border-radius: 8px; font-family: 'Inter', sans-serif;
+      font-size: .88rem; font-weight: 600; cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .filter-btn:hover { background: #a36e20; transform: translateY(-1px); }
+
+    /* ── Type Tabs ── */
+    .type-section { background: var(--cream); padding: 56px 0; border-bottom: 1px solid var(--border); }
+    .type-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+    .type-tab {
+      display: flex; align-items: center; gap: 7px;
+      padding: 10px 20px; border: 1.5px solid var(--border);
+      border-radius: 50px; font-size: .84rem; font-weight: 500;
+      cursor: pointer; transition: all .2s; background: var(--sand); color: var(--ink-mid);
+    }
+    .type-tab:hover, .type-tab.active {
+      background: var(--ink); border-color: var(--ink); color: #fff;
+    }
+    .type-emoji { font-size: 1.05rem; }
+
+    /* ── Articles Mosaic ── */
+    .articles-section { padding: 72px 0; background: var(--sand); }
+    .articles-mosaic {
+      display: grid; grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: auto; gap: 18px;
+    }
+    .art-card {
+      position: relative; border-radius: var(--radius); overflow: hidden;
+      cursor: pointer; transition: transform .3s;
+    }
+    .art-card:hover { transform: translateY(-4px); }
+    .art-card:hover .art-img { transform: scale(1.05); }
+    .art-card:hover .art-overlay { background: linear-gradient(to top, rgba(26,26,46,.88) 0%, rgba(26,26,46,.2) 55%); }
+    .art-card--lg { grid-column: span 7; min-height: 440px; }
+    .art-card--sm { grid-column: span 5; min-height: 440px; }
+    .art-card--md { grid-column: span 4; min-height: 270px; }
+    .art-img-wrap { position: absolute; inset: 0; overflow: hidden; }
+    .art-img { width: 100%; height: 100%; transition: transform .6s ease; }
+    .art-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,26,46,.78) 0%, rgba(26,26,46,.06) 52%);
+      transition: background .3s;
+    }
+    .art-body { position: absolute; bottom: 0; left: 0; right: 0; padding: 22px; z-index: 2; }
+    .art-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 9px; }
+    .art-tag-r {
+      background: rgba(245,243,239,.15); border: 1px solid rgba(245,243,239,.28);
+      color: rgba(255,255,255,.88); backdrop-filter: blur(4px);
+    }
+    .art-tag-t { background: rgba(200,136,42,.88); color: #fff; }
+    .art-tag-g { background: rgba(160,69,90,.88); color: #fff; }
+    .art-tag-s { background: rgba(45,122,110,.9); color: #fff; }
+    .art-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 600; color: #fff; line-height: 1.3; margin-bottom: 7px;
+    }
+    .art-card--lg .art-title { font-size: 1.75rem; }
+    .art-meta { display: flex; gap: 12px; font-size: .73rem; color: rgba(255,255,255,.62); }
+
+    /* ── Destinations Grid ── */
+    .destinations-section { padding: 72px 0; background: var(--cream); border-top: 1px solid var(--border); }
+    .dest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 36px; }
+    .dest-card { position: relative; border-radius: 10px; overflow: hidden; height: 195px; cursor: pointer; }
+    .dest-card img { height: 100%; transition: transform .5s; }
+    .dest-card:hover img { transform: scale(1.08); }
+    .dest-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(26,26,46,.55), rgba(26,26,46,.12));
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 14px;
+      transition: background .3s;
+    }
+    .dest-card:hover .dest-overlay { background: linear-gradient(135deg, rgba(45,122,110,.65), rgba(26,26,46,.2)); }
+    .dest-flag { font-size: 1.4rem; margin-bottom: 4px; }
+    .dest-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: #fff; }
+    .dest-count { font-size: .7rem; color: rgba(255,255,255,.6); margin-top: 2px; }
+    .more-dests { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+    .more-btn {
+      padding: 9px 18px; border: 1px solid var(--border); border-radius: 8px;
+      font-size: .8rem; color: var(--ink-mid); background: var(--sand);
+      transition: all .2s; cursor: pointer;
+    }
+    .more-btn:hover { background: var(--amber); color: #fff; border-color: var(--amber); }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .art-card--lg, .art-card--sm { grid-column: span 12; min-height: 340px; }
+      .art-card--md { grid-column: span 6; }
+      .dest-grid { grid-template-columns: repeat(2, 1fr); }
+      .filter-bar { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .art-card--md { grid-column: span 12; }
+      .filter-bar { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════ HEADER ════ -->
+<header id="site-header">
+  <a href="index.html" class="logo"><div class="logo-dot"></div>EastFarside</a>
+  <nav class="site-nav">
+    <a href="destinations.html" data-lang="en">Destinations</a>
+    <a href="destinations.html" data-lang="es">Destinos</a>
+    <a href="family.html" data-lang="en">Travel Types</a>
+    <a href="family.html" data-lang="es">Tipos de Viaje</a>
+    <a href="article-kyoto.html" data-lang="en">Best Stays</a>
+    <a href="article-kyoto.html" data-lang="es">Alojamientos</a>
+    <a href="about.html" data-lang="en">About</a>
+    <a href="about.html" data-lang="es">Sobre Nosotros</a>
+    <div class="lang-switch">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ════ HERO (Slideshow + Parallax) ════ -->
+<section class="hero" id="hero">
+  <div class="slides-wrap" id="slides-wrap">
+    <!-- slides injected by JS -->
+  </div>
+  <div class="slide-dots" id="slide-dots"></div>
+
+  <div class="hero-content">
+    <div data-lang="en">
+      <p class="hero-eyebrow">East &amp; Southeast Asia · 東南アジア</p>
+      <h1 class="hero-tagline">We Find the<br><em>perfect choice for you</em></h1>
+    </div>
+    <div data-lang="es">
+      <p class="hero-eyebrow">Este y Sudeste Asiático</p>
+      <h1 class="hero-tagline">Encontramos la<br><em>elección perfecta para ti</em></h1>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label data-lang="en">Region</label>
+        <label data-lang="es">Región</label>
+        <select class="filter-select" id="filter-region" onchange="applyFilter()">
+          <option value="">— All Regions —</option>
+          <option value="japan">Japan 🇯🇵</option>
+          <option value="bali">Bali, Indonesia 🇮🇩</option>
+          <option value="thailand">Thailand 🇹🇭</option>
+          <option value="vietnam">Vietnam 🇻🇳</option>
+          <option value="taiwan">Taiwan 🇹🇼</option>
+          <option value="korea">South Korea 🇰🇷</option>
+          <option value="singapore">Singapore 🇸🇬</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label data-lang="en">Budget</label>
+        <label data-lang="es">Presupuesto</label>
+        <select class="filter-select" id="filter-budget" onchange="applyFilter()">
+          <option value="">— Any Budget —</option>
+          <option value="budget">Budget (&lt; $50/day)</option>
+          <option value="mid">Mid-range ($50–150)</option>
+          <option value="luxury">Luxury ($150+)</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label data-lang="en">Travel Type</label>
+        <label data-lang="es">Tipo de Viaje</label>
+        <select class="filter-select" id="filter-type" onchange="applyFilter()">
+          <option value="">— All Types —</option>
+          <option value="family">👨‍👩‍👧 Family</option>
+          <option value="couple">💑 Couple</option>
+          <option value="girls">👭 Girls Trip</option>
+          <option value="senior">🧓 Senior</option>
+        </select>
+      </div>
+      <button class="filter-btn" onclick="applyFilter()">
+        <span data-lang="en">Search →</span>
+        <span data-lang="es">Buscar →</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ════ TRAVEL TYPE TABS ════ -->
+<section class="type-section">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:8px">
+      <p class="section-label" data-lang="en">Browse by Travel Style</p>
+      <p class="section-label" data-lang="es">Explorar por Estilo</p>
+    </div>
+    <div class="type-tabs">
+      <a href="index.html" class="type-tab active" data-type="all">
+        <span class="type-emoji">🗺️</span>
+        <span data-lang="en">All Trips</span><span data-lang="es">Todos</span>
+      </a>
+      <a href="family.html" class="type-tab" data-type="family">
+        <span class="type-emoji">👨‍👩‍👧</span>
+        <span data-lang="en">Family</span><span data-lang="es">Familia</span>
+      </a>
+      <a href="couple.html" class="type-tab" data-type="couple">
+        <span class="type-emoji">💑</span>
+        <span data-lang="en">Couple</span><span data-lang="es">Pareja</span>
+      </a>
+      <a href="girls.html" class="type-tab" data-type="girls">
+        <span class="type-emoji">👭</span>
+        <span data-lang="en">Girls Trip</span><span data-lang="es">Amigas</span>
+      </a>
+      <a href="senior.html" class="type-tab" data-type="senior">
+        <span class="type-emoji">🧓</span>
+        <span data-lang="en">Senior</span><span data-lang="es">Sénior</span>
+      </a>
+    </div>
+
+    <!-- Articles Mosaic -->
+    <div class="articles-mosaic" id="mosaic">
+      <a href="article-kyoto.html" class="art-card art-card--lg reveal" data-type="couple girls" data-region="japan" data-budget="mid">
+        <div class="art-img-wrap">
+          <img src="../data/../data/../data/../data/../data/../data/../data/../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_japan_kyoto_1774077071288.png" alt="Kyoto Japan" class="art-img" />
+        </div>
+        <div class="art-overlay"></div>
+        <div class="art-body">
+          <div class="art-tags">
+            <span class="tag-pill art-tag-r">Japan 🇯🇵</span>
+            <span class="tag-pill art-tag-t">💑 Couple</span>
+            <span class="tag-pill art-tag-g">👭 Girls</span>
+          </div>
+          <div class="art-title" data-lang="en">Kyoto 5-Day Model Course — Temples, Bamboo & Seasonal Cuisine</div>
+          <div class="art-title" data-lang="es">Itinerario 5 Días por Kioto — Templos, Bambú y Gastronomía</div>
+          <div class="art-meta"><span>⏱ 10 min</span><span>🏡 Mid-range</span></div>
+        </div>
+      </a>
+
+      <a href="couple.html" class="art-card art-card--sm reveal" data-type="couple" data-region="vietnam" data-budget="luxury" style="transition-delay:.08s">
+        <div class="art-img-wrap">
+          <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_vietnam_halong_1774077115116.png" alt="Ha Long Bay" class="art-img" />
+        </div>
+        <div class="art-overlay"></div>
+        <div class="art-body">
+          <div class="art-tags">
+            <span class="tag-pill art-tag-r">Vietnam 🇻🇳</span>
+            <span class="tag-pill art-tag-t">💑 Couple</span>
+          </div>
+          <div class="art-title" data-lang="en">Ha Long Bay 3-Day Cruise — The Ultimate Couple's Escape</div>
+          <div class="art-title" data-lang="es">Crucero 3 Días en Ha Long — Escapada Perfecta para Parejas</div>
+          <div class="art-meta"><span>⏱ 8 min</span><span>🏡 Luxury</span></div>
+        </div>
+      </a>
+
+      <a href="family.html" class="art-card art-card--md reveal" data-type="family" data-region="bali" data-budget="mid" style="transition-delay:.12s">
+        <div class="art-img-wrap">
+          <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_bali_family_1774077085279.png" alt="Bali Family" class="art-img" />
+        </div>
+        <div class="art-overlay"></div>
+        <div class="art-body">
+          <div class="art-tags">
+            <span class="tag-pill art-tag-r">Bali 🇮🇩</span>
+            <span class="tag-pill art-tag-t">👨‍👩‍👧 Family</span>
+          </div>
+          <div class="art-title" data-lang="en" style="font-size:1rem">Bali Family Week — Safe Zones & Kid-Friendly Stays</div>
+          <div class="art-title" data-lang="es" style="font-size:1rem">Bali en Familia — Zonas Seguras y Alojamientos</div>
+          <div class="art-meta"><span>⏱ 9 min</span><span>💰 Mid</span></div>
+        </div>
+      </a>
+
+      <a href="couple.html" class="art-card art-card--md reveal" data-type="couple girls" data-region="taiwan" data-budget="budget" style="transition-delay:.16s">
+        <div class="art-img-wrap">
+          <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_taiwan_couple_1774077151402.png" alt="Taiwan Night" class="art-img" />
+        </div>
+        <div class="art-overlay"></div>
+        <div class="art-body">
+          <div class="art-tags">
+            <span class="tag-pill art-tag-r">Taiwan 🇹🇼</span>
+            <span class="tag-pill art-tag-t">💑 Couple</span>
+          </div>
+          <div class="art-title" data-lang="en" style="font-size:1rem">Jiufen Night Walk — Lanterns, Rain & Romance</div>
+          <div class="art-title" data-lang="es" style="font-size:1rem">Jiufen de Noche — Linternas, Lluvia y Romance</div>
+          <div class="art-meta"><span>⏱ 6 min</span><span>💰 Budget</span></div>
+        </div>
+      </a>
+
+      <a href="senior.html" class="art-card art-card--md reveal" data-type="senior" data-region="korea" data-budget="mid" style="transition-delay:.2s">
+        <div class="art-img-wrap">
+          <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_korea_senior_1774077178950.png" alt="Seoul Korea" class="art-img" />
+        </div>
+        <div class="art-overlay"></div>
+        <div class="art-body">
+          <div class="art-tags">
+            <span class="tag-pill art-tag-r">Korea 🇰🇷</span>
+            <span class="tag-pill art-tag-s">🧓 Senior</span>
+          </div>
+          <div class="art-title" data-lang="en" style="font-size:1rem">Seoul for Seniors — Easy Palaces, Accessible Stays</div>
+          <div class="art-title" data-lang="es" style="font-size:1rem">Seúl para Mayores — Palacios y Alojamientos Accesibles</div>
+          <div class="art-meta"><span>⏱ 7 min</span><span>💰 Mid</span></div>
+        </div>
+      </a>
+    </div><!-- /mosaic -->
+    <div style="text-align:center; margin-top:36px">
+      <a href="destinations.html" class="view-all">
+        <span data-lang="en">View All Guides →</span>
+        <span data-lang="es">Ver Todas las Guías →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ DESTINATIONS ════ -->
+<section class="destinations-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <p class="section-label" data-lang="en">Explore by Country</p>
+        <p class="section-label" data-lang="es">Explorar por País</p>
+        <h2 class="section-title" data-lang="en">Where Will You Go?</h2>
+        <h2 class="section-title" data-lang="es">¿A Dónde Vas?</h2>
+      </div>
+      <a href="destinations.html" class="view-all">
+        <span data-lang="en">All Destinations →</span>
+        <span data-lang="es">Todos los Destinos →</span>
+      </a>
+    </div>
+    <div class="dest-grid">
+      <a href="destinations.html#japan" class="dest-card reveal">
+        <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_japan_kyoto_1774077071288.png" alt="Japan" />
+        <div class="dest-overlay">
+          <div class="dest-flag">🇯🇵</div>
+          <div class="dest-name" data-lang="en">Japan</div>
+          <div class="dest-name" data-lang="es">Japón</div>
+          <div class="dest-count" data-lang="en">24 guides</div>
+          <div class="dest-count" data-lang="es">24 guías</div>
+        </div>
+      </a>
+      <a href="destinations.html#thailand" class="dest-card reveal" style="transition-delay:.08s">
+        <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_thailand_temple_1774077100069.png" alt="Thailand" />
+        <div class="dest-overlay">
+          <div class="dest-flag">🇹🇭</div>
+          <div class="dest-name" data-lang="en">Thailand</div>
+          <div class="dest-name" data-lang="es">Tailandia</div>
+          <div class="dest-count" data-lang="en">18 guides</div>
+          <div class="dest-count" data-lang="es">18 guías</div>
+        </div>
+      </a>
+      <a href="destinations.html#bali" class="dest-card reveal" style="transition-delay:.12s">
+        <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_bali_family_1774077085279.png" alt="Bali" />
+        <div class="dest-overlay">
+          <div class="dest-flag">🇮🇩</div>
+          <div class="dest-name">Bali</div>
+          <div class="dest-count" data-lang="en">16 guides</div>
+          <div class="dest-count" data-lang="es">16 guías</div>
+        </div>
+      </a>
+      <a href="destinations.html#singapore" class="dest-card reveal" style="transition-delay:.16s">
+        <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_singapore_food_1774077164436.png" alt="Singapore" />
+        <div class="dest-overlay">
+          <div class="dest-flag">🇸🇬</div>
+          <div class="dest-name">Singapore</div>
+          <div class="dest-count" data-lang="en">12 guides</div>
+          <div class="dest-count" data-lang="es">12 guías</div>
+        </div>
+      </a>
+    </div>
+    <div class="more-dests">
+      <a href="destinations.html#vietnam" class="more-btn">🇻🇳 Vietnam</a>
+      <a href="destinations.html#taiwan" class="more-btn">🇹🇼 Taiwan</a>
+      <a href="destinations.html#korea" class="more-btn">🇰🇷 South Korea</a>
+      <a href="destinations.html#malaysia" class="more-btn">🇲🇾 Malaysia</a>
+      <a href="destinations.html#philippines" class="more-btn">🇵🇭 Philippines</a>
+      <a href="destinations.html#hongkong" class="more-btn">🇭🇰 Hong Kong</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ DISCLAIMER ════ -->
+<div class="disclaimer-bar">
+  <span data-lang="en">⚠️ <strong style="color:rgba(255,255,255,.7)">AI Disclosure:</strong> Articles on EastFarside are AI-assisted and reviewed by human editors. Some links are <a href="about.html#affiliate">affiliate links</a>. <a href="about.html">Full disclaimer →</a></span>
+  <span data-lang="es">⚠️ <strong style="color:rgba(255,255,255,.7)">Aviso IA:</strong> Los artículos son asistidos por IA y revisados por editores. Algunos enlaces son de <a href="about.html#affiliate">afiliados</a>. <a href="about.html">Aviso completo →</a></span>
+</div>
+
+<!-- ════ FOOTER ════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">🌏 EastFarside</div>
+        <div class="footer-socials">
+          <a href="https://x.com/EastFarside" class="social-icon">𝕏</a>
+          <a href="https://instagram.com/eastfarside" class="social-icon">📸</a>
+          <a href="#" class="social-icon">📌</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang="en">Destinations</h4>
+        <h4 data-lang="es">Destinos</h4>
+        <ul>
+          <li><a href="destinations.html#japan">Japan 🇯🇵</a></li>
+          <li><a href="destinations.html#thailand">Thailand 🇹🇭</a></li>
+          <li><a href="destinations.html#bali">Bali 🇮🇩</a></li>
+          <li><a href="destinations.html#vietnam">Vietnam 🇻🇳</a></li>
+          <li><a href="destinations.html#korea">South Korea 🇰🇷</a></li>
+          <li><a href="destinations.html#singapore">Singapore 🇸🇬</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang="en">Travel Types</h4>
+        <h4 data-lang="es">Tipos de Viaje</h4>
+        <ul>
+          <li><a href="family.html">👨‍👩‍👧 Family</a></li>
+          <li><a href="couple.html">💑 Couple</a></li>
+          <li><a href="girls.html">👭 Girls Trip</a></li>
+          <li><a href="senior.html">🧓 Senior</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang="en">Info</h4>
+        <h4 data-lang="es">Información</h4>
+        <ul>
+          <li><a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="es">Sobre Nosotros</a></li>
+          <li><a href="privacy-policy.html" data-lang="en">Privacy Policy</a><a href="privacy-policy.html" data-lang="es">Política de Privacidad</a></li>
+          <li><a href="terms-of-use.html" data-lang="en">Terms of Use</a><a href="terms-of-use.html" data-lang="es">Términos de Uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 EastFarside.</span>
+      <span>eastfarside.com · <a href="index.html">EN</a> / <a href="index.html#es" onclick="setLang('es')">ES</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ══ Slideshow Data ══ */
+const SLIDES = [
+  {
+    src: 'C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/slide_japan_inari_1774080230751.png',
+    caption: 'Fushimi Inari · Kyoto, Japan'
+  },
+  {
+    src: 'C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/slide_bali_terraces_1774080246768.png',
+    caption: 'Tegallalang · Bali, Indonesia'
+  },
+  {
+    src: 'C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_thailand_temple_1774077100069.png',
+    caption: 'Wat Arun · Bangkok, Thailand'
+  },
+  {
+    src: 'C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_vietnam_halong_1774077115116.png',
+    caption: 'Ha Long Bay · Vietnam'
+  },
+  {
+    src: 'C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_korea_senior_1774077178950.png',
+    caption: 'Gyeongbokgung · Seoul, Korea'
+  }
+];
+
+/* ══ Build slides DOM ══ */
+const wrap = document.getElementById('slides-wrap');
+const dotsEl = document.getElementById('slide-dots');
+let current = 0, timer;
+
+SLIDES.forEach((s, i) => {
+  // slide
+  const div = document.createElement('div');
+  div.className = 'slide' + (i === 0 ? ' active' : '');
+  div.style.backgroundImage = `url('${s.src}')`;
+  div.innerHTML = '<div class="slide-overlay"></div>';
+  wrap.appendChild(div);
+  // dot
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => goTo(i);
+  dotsEl.appendChild(dot);
+});
+
+function goTo(idx) {
+  const slides = wrap.querySelectorAll('.slide');
+  const dots   = dotsEl.querySelectorAll('.dot');
+  slides[current].classList.remove('active');
+  dots[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  dots[current].classList.add('active');
+}
+
+function next() { goTo((current + 1) % SLIDES.length); }
+timer = setInterval(next, 5000);
+
+/* ══ Parallax Scroll ══ */
+function onScroll() {
+  const scrollY = window.scrollY;
+  // Header style
+  document.getElementById('site-header').classList.toggle('scrolled', scrollY > 60);
+  // Parallax on active slide
+  const slides = wrap.querySelectorAll('.slide');
+  slides.forEach(s => {
+    s.style.transform = `translateY(${scrollY * 0.38}px)`;
+  });
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+
+/* ══ Language Switch ══ */
+function setLang(lang) {
+  const isES = lang === 'es';
+  document.getElementById('btn-en').classList.toggle('active', !isES);
+  document.getElementById('btn-es').classList.toggle('active', isES);
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = el.dataset.lang === lang ? '' : 'none';
+  });
+  document.getElementById('html-root').lang = lang;
+  localStorage.setItem('ef-lang', lang);
+}
+// Restore saved lang
+const savedLang = localStorage.getItem('ef-lang') || 'en';
+if (savedLang === 'es') setLang('es');
+
+/* ══ Filter ══ */
+function applyFilter() {
+  const region = document.getElementById('filter-region').value;
+  const budget = document.getElementById('filter-budget').value;
+  const type   = document.getElementById('filter-type').value;
+  document.querySelectorAll('.art-card').forEach(card => {
+    const r = card.dataset.region || '';
+    const b = card.dataset.budget || '';
+    const t = card.dataset.type || '';
+    const show =
+      (!region || r === region) &&
+      (!budget || b === budget) &&
+      (!type   || t.includes(type));
+    card.style.display = show ? '' : 'none';
+  });
+}
+
+/* ══ Scroll Reveal ══ */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

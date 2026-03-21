@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Privacy Policy for EastFarside — how we collect, use, and protect your information."/>
+  <title>Privacy Policy | EastFarside</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .legal-hero{padding:calc(var(--header-h)+60px) 0 50px;background:var(--ink);text-align:center;position:relative;overflow:hidden;}
+    .legal-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(200,136,42,.18),transparent 65%),radial-gradient(ellipse at 20% 80%,rgba(45,122,110,.15),transparent 55%);pointer-events:none;}
+    .legal-hero-content{position:relative;z-index:2;}
+    .legal-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.2rem);color:#fff;font-weight:700;margin-bottom:10px;}
+    .legal-hero .subtitle{color:rgba(255,255,255,.55);font-size:.85rem;margin-top:6px;}
+    .legal-section{padding:72px 0 88px;background:var(--sand);}
+    .legal-layout{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;}
+    /* Sidebar TOC */
+    .legal-toc{position:sticky;top:calc(var(--header-h)+24px);background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);}
+    .legal-toc h3{font-size:.7rem;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--amber);margin-bottom:14px;}
+    .legal-toc a{display:block;font-size:.8rem;color:var(--ink-mid);padding:5px 0 5px 10px;border-left:2px solid var(--border);margin-bottom:2px;transition:all .2s;}
+    .legal-toc a:hover{color:var(--ink);border-left-color:var(--amber);}
+    /* Content */
+    .legal-content{}
+    .legal-block{background:#fff;border-radius:var(--radius);padding:28px 32px;border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:20px;}
+    .legal-block:last-child{margin-bottom:0;}
+    .legal-block h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:9px;}
+    .legal-block h3{font-size:.9rem;font-weight:600;color:var(--ink);margin:18px 0 8px;}
+    .legal-block p{font-size:.85rem;line-height:1.85;color:var(--ink-mid);margin-bottom:10px;}
+    .legal-block p:last-child{margin-bottom:0;}
+    .legal-block ul,.legal-block ol{margin:8px 0 12px 0;padding-left:0;list-style:none;}
+    .legal-block li{font-size:.84rem;color:var(--ink-mid);padding:5px 0 5px 20px;position:relative;border-bottom:1px dashed var(--border);}
+    .legal-block li::before{content:'→';position:absolute;left:0;color:var(--amber);}
+    .legal-block li:last-child{border-bottom:none;}
+    .legal-block ol li{counter-increment:item;}
+    .legal-block ol{counter-reset:item;}
+    .legal-block ol li::before{content:counter(item)'.';color:var(--amber);font-weight:600;}
+    /* Highlight banners */
+    .banner-ai{background:var(--ink);color:#fff;border-radius:10px;padding:20px 24px;margin:16px 0;}
+    .banner-ai h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#f0d090;margin-bottom:8px;}
+    .banner-ai p{font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.7);margin-bottom:6px;}
+    .banner-ai p:last-child{margin-bottom:0;}
+    .banner-affiliate{background:var(--amber-l);border-left:4px solid var(--amber);border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;}
+    .banner-affiliate p{font-size:.83rem;line-height:1.8;color:var(--ink-mid);}
+    .banner-ccpa{background:var(--teal-l);border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;}
+    .banner-ccpa p{font-size:.83rem;line-height:1.8;color:var(--ink-mid);}
+    .updated-badge{display:inline-flex;align-items:center;gap:6px;background:var(--amber-l);color:var(--amber);font-size:.72rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:50px;margin-bottom:20px;}
+    /* Responsive */
+    @media(max-width:900px){.legal-layout{grid-template-columns:1fr;}.legal-toc{position:static;}}
+    @media(max-width:640px){.legal-block{padding:20px;}}
+  </style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header id="site-header">
+  <a href="index.html" class="logo"><div class="logo-dot"></div>EastFarside</a>
+  <nav class="site-nav">
+    <a href="destinations.html" data-lang="en">Destinations</a><a href="destinations.html" data-lang="es">Destinos</a>
+    <a href="family.html" data-lang="en">Travel Types</a><a href="family.html" data-lang="es">Tipos</a>
+    <a href="article-kyoto.html" data-lang="en">Best Stays</a><a href="article-kyoto.html" data-lang="es">Alojamientos</a>
+    <a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="es">Sobre Nosotros</a>
+    <div class="lang-switch">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ── Hero ── -->
+<section class="legal-hero">
+  <div class="legal-hero-content container">
+    <h1 data-lang="en">Privacy Policy</h1>
+    <h1 data-lang="es">Política de Privacidad</h1>
+  </div>
+</section>
+
+<!-- ── Body ── -->
+<section class="legal-section">
+  <div class="container">
+    <div class="legal-layout">
+
+      <!-- Sidebar TOC (EN) -->
+      <aside class="legal-toc" data-lang="en">
+        <h3>Contents</h3>
+        <a href="#overview">1. Overview</a>
+        <a href="#ai-use">2. AI Content Disclosure</a>
+        <a href="#affiliate">3. Affiliate Disclosure</a>
+        <a href="#data-collect">4. Information We Collect</a>
+        <a href="#cookies">5. Cookies & Analytics</a>
+        <a href="#third-party">6. Third-Party Services</a>
+        <a href="#ccpa">7. California Privacy Rights</a>
+        <a href="#children">8. Children's Privacy</a>
+        <a href="#changes">9. Policy Changes</a>
+        <a href="#contact">10. Contact Us</a>
+      </aside>
+
+      <!-- Sidebar TOC (ES) -->
+      <aside class="legal-toc" data-lang="es">
+        <h3>Contenido</h3>
+        <a href="#overview">1. Descripción general</a>
+        <a href="#ai-use">2. Divulgación de IA</a>
+        <a href="#affiliate">3. Divulgación de afiliados</a>
+        <a href="#data-collect">4. Información que recopilamos</a>
+        <a href="#cookies">5. Cookies y analíticas</a>
+        <a href="#third-party">6. Servicios de terceros</a>
+        <a href="#ccpa">7. Derechos de privacidad en CA</a>
+        <a href="#children">8. Privacidad infantil</a>
+        <a href="#changes">9. Cambios en la política</a>
+        <a href="#contact">10. Contáctanos</a>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="legal-content">
+
+        <div class="updated-badge">
+          <span data-lang="en">Effective Date: January 1, 2026 &nbsp;·&nbsp; Last Updated: March 2026</span>
+          <span data-lang="es">Vigencia: 1 de enero de 2026 &nbsp;·&nbsp; Actualización: marzo 2026</span>
+        </div>
+
+        <!-- 1. Overview -->
+        <div class="legal-block" id="overview">
+          <h2 data-lang="en">1. Overview</h2>
+          <h2 data-lang="es">1. Descripción General</h2>
+          <p data-lang="en">EastFarside ("we," "us," or "our") operates the website EastFarside.com (the "Site"). This Privacy Policy explains how we collect, use, and protect information when you visit our Site. By using EastFarside, you agree to the practices described in this policy.</p>
+          <p data-lang="es">EastFarside ("nosotros" o "nuestro") opera el sitio web EastFarside.com (el "Sitio"). Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos la información cuando visitas nuestro Sitio. Al usar EastFarside, aceptas las prácticas descritas en esta política.</p>
+          <p data-lang="en">We are committed to transparency. This site uses AI-assisted content and affiliate links — both of which are fully disclosed in this policy.</p>
+          <p data-lang="es">Estamos comprometidos con la transparencia. Este sitio usa contenido asistido por IA y enlaces de afiliados, ambos completamente descritos en esta política.</p>
+        </div>
+
+        <!-- 2. AI Disclosure -->
+        <div class="legal-block" id="ai-use">
+          <h2 data-lang="en">2. AI Content Disclosure</h2>
+          <h2 data-lang="es">2. Divulgación de Contenido de IA</h2>
+          <div class="banner-ai">
+            <h3 data-lang="en">This site uses artificial intelligence to create content.</h3>
+            <h3 data-lang="es">Este sitio usa inteligencia artificial para crear contenido.</h3>
+            <p data-lang="en">EastFarside uses AI tools — including Google Gemini and OpenAI models — to assist in researching, drafting, and translating travel content. AI-generated images may also appear on this site.</p>
+            <p data-lang="es">EastFarside usa herramientas de IA, incluidos Google Gemini y modelos de OpenAI, para investigar, redactar y traducir contenido de viajes. Las imágenes generadas por IA también pueden aparecer en este sitio.</p>
+            <p data-lang="en">All AI-assisted content is reviewed by human editors before publication to ensure accuracy and quality. However, we cannot guarantee that all information is free from error.</p>
+            <p data-lang="es">Todo el contenido asistido por IA es revisado por editores humanos antes de publicarse para garantizar precisión y calidad. Sin embargo, no podemos garantizar que toda la información esté libre de errores.</p>
+          </div>
+          <p data-lang="en">AI-generated imagery on this site is intended to represent real travel destinations faithfully. These images are clearly distinguishable from actual photographs where labeled.</p>
+          <p data-lang="es">Las imágenes generadas por IA en este sitio están diseñadas para representar fielmente destinos de viaje reales. Estas imágenes están claramente identificadas donde corresponde.</p>
+        </div>
+
+        <!-- 3. Affiliate Disclosure -->
+        <div class="legal-block" id="affiliate">
+          <h2 data-lang="en">3. Affiliate Disclosure</h2>
+          <h2 data-lang="es">3. Divulgación de Afiliados</h2>
+          <div class="banner-affiliate">
+            <p data-lang="en"><strong>FTC Disclosure:</strong> EastFarside participates in affiliate marketing programs. Some links on this site are affiliate links. If you click and make a purchase or booking through these links, we may earn a commission — at <em>no additional cost to you</em>.</p>
+            <p data-lang="es"><strong>Aviso FTC:</strong> EastFarside participa en programas de marketing de afiliados. Algunos enlaces en este sitio son de afiliados. Si haces clic y realizas una compra o reserva a través de estos enlaces, podemos ganar una comisión — <em>sin costo adicional para ti</em>.</p>
+          </div>
+          <h3 data-lang="en">Our Affiliate Partners Include:</h3>
+          <h3 data-lang="es">Nuestros Socios de Afiliados Incluyen:</h3>
+          <ul>
+            <li data-lang="en">Booking.com — hotel and accommodation reservations</li>
+            <li data-lang="es">Booking.com — reservas de hoteles y alojamientos</li>
+            <li data-lang="en">Viator — tours, activities, and travel experiences</li>
+            <li data-lang="es">Viator — tours, actividades y experiencias de viaje</li>
+            <li data-lang="en">Amazon Associates — travel gear and book recommendations</li>
+            <li data-lang="es">Amazon Associates — recomendaciones de equipaje y libros de viaje</li>
+          </ul>
+          <p data-lang="en">Our editorial opinions are never influenced by affiliate relationships. We only recommend services we believe provide genuine value to travelers. Affiliate links are identified where possible.</p>
+          <p data-lang="es">Nuestras opiniones editoriales nunca son influenciadas por relaciones de afiliados. Solo recomendamos servicios que creemos aportan valor genuino a los viajeros. Los enlaces de afiliados se identifican donde es posible.</p>
+        </div>
+
+        <!-- 4. Data Collection -->
+        <div class="legal-block" id="data-collect">
+          <h2 data-lang="en">4. Information We Collect</h2>
+          <h2 data-lang="es">4. Información que Recopilamos</h2>
+          <h3 data-lang="en">Information You Provide</h3>
+          <h3 data-lang="es">Información que Proporcionas</h3>
+          <p data-lang="en">EastFarside does not currently collect personal information such as names, email addresses, or payment details directly through the Site. We do not offer email subscriptions or user accounts.</p>
+          <p data-lang="es">EastFarside actualmente no recopila información personal como nombres, correos electrónicos o datos de pago directamente a través del Sitio. No ofrecemos suscripciones de correo ni cuentas de usuario.</p>
+          <h3 data-lang="en">Information Collected Automatically</h3>
+          <h3 data-lang="es">Información Recopilada Automáticamente</h3>
+          <ul>
+            <li data-lang="en">Browser type and version</li>
+            <li data-lang="es">Tipo y versión del navegador</li>
+            <li data-lang="en">Pages visited and time spent on each page</li>
+            <li data-lang="es">Páginas visitadas y tiempo en cada una</li>
+            <li data-lang="en">Referring website (how you arrived at our site)</li>
+            <li data-lang="es">Sitio web de origen (cómo llegaste a nuestro sitio)</li>
+            <li data-lang="en">General geographic region (country/region level only)</li>
+            <li data-lang="es">Región geográfica general (solo a nivel país/región)</li>
+            <li data-lang="en">Device type (desktop, mobile, tablet)</li>
+            <li data-lang="es">Tipo de dispositivo (escritorio, móvil, tableta)</li>
+          </ul>
+          <p data-lang="en">This data is collected in aggregate and is not tied to any identifiable individual.</p>
+          <p data-lang="es">Estos datos se recopilan de forma agregada y no están vinculados a ningún individuo identificable.</p>
+        </div>
+
+        <!-- 5. Cookies -->
+        <div class="legal-block" id="cookies">
+          <h2 data-lang="en">5. Cookies &amp; Analytics</h2>
+          <h2 data-lang="es">5. Cookies y Analíticas</h2>
+          <p data-lang="en">We use cookies and similar tracking technologies to improve the browsing experience and understand how our content is used. The following types of cookies may be used on this site:</p>
+          <p data-lang="es">Usamos cookies y tecnologías de seguimiento similares para mejorar la experiencia de navegación y entender cómo se usa nuestro contenido. Los siguientes tipos de cookies pueden usarse en este sitio:</p>
+          <ul>
+            <li data-lang="en"><strong>Essential cookies</strong> — required for basic site functionality (e.g., language preference)</li>
+            <li data-lang="es"><strong>Cookies esenciales</strong> — requeridas para la funcionalidad básica del sitio (p.ej., preferencia de idioma)</li>
+            <li data-lang="en"><strong>Analytics cookies</strong> — help us understand visitor behavior via Google Analytics</li>
+            <li data-lang="es"><strong>Cookies de analíticas</strong> — nos ayudan a entender el comportamiento de los visitantes a través de Google Analytics</li>
+            <li data-lang="en"><strong>Affiliate tracking cookies</strong> — set by our affiliate partners to track referrals and commissions</li>
+            <li data-lang="es"><strong>Cookies de seguimiento de afiliados</strong> — configuradas por nuestros socios de afiliados para rastrear referidos y comisiones</li>
+          </ul>
+          <p data-lang="en">You can control or disable cookies through your browser settings. Note that disabling cookies may affect the functionality of this site and affiliate link tracking.</p>
+          <p data-lang="es">Puedes controlar o deshabilitar las cookies a través de la configuración de tu navegador. Ten en cuenta que deshabilitar las cookies puede afectar la funcionalidad del sitio y el seguimiento de enlaces de afiliados.</p>
+        </div>
+
+        <!-- 6. Third-Party Services -->
+        <div class="legal-block" id="third-party">
+          <h2 data-lang="en">6. Third-Party Services</h2>
+          <h2 data-lang="es">6. Servicios de Terceros</h2>
+          <p data-lang="en">Our site may contain links to or embed content from the following third-party services. Each has its own privacy policy, which we encourage you to review:</p>
+          <p data-lang="es">Nuestro sitio puede contener enlaces o contenido incrustado de los siguientes servicios de terceros. Cada uno tiene su propia política de privacidad, que te recomendamos revisar:</p>
+          <ul>
+            <li data-lang="en">Google Analytics — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--teal)">policies.google.com/privacy</a></li>
+            <li data-lang="es">Google Analytics — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--teal)">policies.google.com/privacy</a></li>
+            <li data-lang="en">Booking.com — <a href="https://www.booking.com/content/privacy.html" target="_blank" rel="noopener" style="color:var(--teal)">booking.com/content/privacy</a></li>
+            <li data-lang="es">Booking.com — <a href="https://www.booking.com/content/privacy.html" target="_blank" rel="noopener" style="color:var(--teal)">booking.com/content/privacy</a></li>
+            <li data-lang="en">Viator (Tripadvisor) — <a href="https://www.tripadvisor.com/pages/privacy.html" target="_blank" rel="noopener" style="color:var(--teal)">tripadvisor.com/pages/privacy</a></li>
+            <li data-lang="es">Viator (Tripadvisor) — <a href="https://www.tripadvisor.com/pages/privacy.html" target="_blank" rel="noopener" style="color:var(--teal)">tripadvisor.com/pages/privacy</a></li>
+            <li data-lang="en">Amazon Associates — <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ" target="_blank" rel="noopener" style="color:var(--teal)">amazon.com Privacy Notice</a></li>
+            <li data-lang="es">Amazon Associates — <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ" target="_blank" rel="noopener" style="color:var(--teal)">Aviso de privacidad de Amazon</a></li>
+          </ul>
+          <p data-lang="en">We are not responsible for the privacy practices of any third-party websites linked from EastFarside.</p>
+          <p data-lang="es">No somos responsables de las prácticas de privacidad de sitios web de terceros vinculados desde EastFarside.</p>
+        </div>
+
+        <!-- 7. CCPA -->
+        <div class="legal-block" id="ccpa">
+          <h2 data-lang="en">7. California Privacy Rights (CCPA)</h2>
+          <h2 data-lang="es">7. Derechos de Privacidad en California (CCPA)</h2>
+          <div class="banner-ccpa">
+            <p data-lang="en">If you are a California resident, the California Consumer Privacy Act (CCPA) grants you specific rights regarding your personal information.</p>
+            <p data-lang="es">Si eres residente de California, la Ley de Privacidad del Consumidor de California (CCPA) te otorga derechos específicos sobre tu información personal.</p>
+          </div>
+          <h3 data-lang="en">Your Rights Include:</h3>
+          <h3 data-lang="es">Tus Derechos Incluyen:</h3>
+          <ul>
+            <li data-lang="en"><strong>Right to Know</strong> — You may request disclosure of personal information we have collected about you</li>
+            <li data-lang="es"><strong>Derecho a saber</strong> — Puedes solicitar la divulgación de la información personal que hemos recopilado sobre ti</li>
+            <li data-lang="en"><strong>Right to Delete</strong> — You may request deletion of personal information we have collected (subject to certain exceptions)</li>
+            <li data-lang="es"><strong>Derecho a eliminar</strong> — Puedes solicitar la eliminación de la información personal recopilada (sujeto a ciertas excepciones)</li>
+            <li data-lang="en"><strong>Right to Opt-Out</strong> — EastFarside does not sell personal information. No opt-out is required</li>
+            <li data-lang="es"><strong>Derecho a optar por no participar</strong> — EastFarside no vende información personal. No se requiere exclusión</li>
+            <li data-lang="en"><strong>Right to Non-Discrimination</strong> — We will not discriminate against you for exercising your CCPA rights</li>
+            <li data-lang="es"><strong>Derecho a no discriminación</strong> — No discriminaremos contra ti por ejercer tus derechos bajo la CCPA</li>
+          </ul>
+          <p data-lang="en">To exercise your California privacy rights, please contact us at the email address below. We will respond within 45 days as required by law.</p>
+          <p data-lang="es">Para ejercer tus derechos de privacidad de California, contáctanos al correo electrónico a continuación. Responderemos dentro de los 45 días requeridos por la ley.</p>
+        </div>
+
+        <!-- 8. Children -->
+        <div class="legal-block" id="children">
+          <h2 data-lang="en">8. Children's Privacy</h2>
+          <h2 data-lang="es">8. Privacidad Infantil</h2>
+          <p data-lang="en">EastFarside is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If we become aware that we have inadvertently collected such information, we will promptly delete it.</p>
+          <p data-lang="es">EastFarside no está dirigido a menores de 13 años. No recopilamos conscientemente información personal de menores de 13 años. Si descubrimos que hemos recopilado dicha información inadvertidamente, la eliminaremos de inmediato.</p>
+        </div>
+
+        <!-- 9. Changes -->
+        <div class="legal-block" id="changes">
+          <h2 data-lang="en">9. Changes to This Policy</h2>
+          <h2 data-lang="es">9. Cambios en Esta Política</h2>
+          <p data-lang="en">We may update this Privacy Policy from time to time. Any changes will be reflected by the "Last Updated" date at the top of this page. Continued use of the site after any changes constitutes your acceptance of the updated policy.</p>
+          <p data-lang="es">Podemos actualizar esta Política de Privacidad ocasionalmente. Los cambios se reflejarán en la fecha de "Última actualización" en la parte superior de esta página. El uso continuado del sitio tras cualquier cambio constituye tu aceptación de la política actualizada.</p>
+        </div>
+
+        <!-- 10. Contact -->
+        <div class="legal-block" id="contact">
+          <h2 data-lang="en">10. Contact Us</h2>
+          <h2 data-lang="es">10. Contáctanos</h2>
+          <p data-lang="en">If you have questions about this Privacy Policy or wish to exercise your privacy rights, please contact us:</p>
+          <p data-lang="es">Si tienes preguntas sobre esta Política de Privacidad o deseas ejercer tus derechos de privacidad, contáctanos:</p>
+          <ul>
+            <li data-lang="en">Email: <a href="mailto:privacy@eastfarside.com" style="color:var(--teal)">privacy@eastfarside.com</a></li>
+            <li data-lang="es">Correo: <a href="mailto:privacy@eastfarside.com" style="color:var(--teal)">privacy@eastfarside.com</a></li>
+            <li data-lang="en">Website: <a href="about.html" style="color:var(--teal)">EastFarside — About</a></li>
+            <li data-lang="es">Sitio web: <a href="about.html" style="color:var(--teal)">EastFarside — Sobre Nosotros</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /legal-content -->
+    </div><!-- /legal-layout -->
+  </div>
+</section>
+
+<!-- ── Disclaimer Bar ── -->
+<div class="disclaimer-bar">
+  <span data-lang="en">⚠️ <strong style="color:rgba(255,255,255,.7)">AI Disclosure:</strong> Content is AI-assisted and reviewed by human editors. <a href="disclaimer.html">Affiliate & content disclaimer</a> applies.</span>
+  <span data-lang="es">⚠️ Contenido asistido por IA y revisado por humanos. Se aplica el <a href="disclaimer.html">aviso de descargo de responsabilidad</a>.</span>
+</div>
+
+<!-- ── Footer ── -->
+<footer class="site-footer"><div class="container">
+  <div class="footer-inner">
+    <div><div class="footer-brand-name">🌏 EastFarside</div></div>
+    <div class="footer-col"><h4>Destinations</h4><ul><li><a href="destinations.html">All Destinations</a></li></ul></div>
+    <div class="footer-col"><h4>Travel Types</h4><ul><li><a href="family.html">👨‍👩‍👧 Family</a></li><li><a href="couple.html">💑 Couple</a></li><li><a href="girls.html">👭 Girls</a></li><li><a href="senior.html">🧓 Senior</a></li></ul></div>
+    <div class="footer-col"><h4>Info</h4><ul>
+      <li><a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="es">Sobre Nosotros</a></li>
+      <li><a href="privacy-policy.html" data-lang="en">Privacy Policy</a><a href="privacy-policy.html" data-lang="es">Política de Privacidad</a></li>
+      <li><a href="terms-of-use.html" data-lang="en">Terms of Use</a><a href="terms-of-use.html" data-lang="es">Términos de Uso</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 EastFarside.</span><a href="index.html">← Home</a></div>
+</div></footer>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>60));
+function setLang(l){
+  document.getElementById('btn-en').classList.toggle('active',l!=='es');
+  document.getElementById('btn-es').classList.toggle('active',l==='es');
+  document.querySelectorAll('[data-lang]').forEach(el=>el.style.display=el.dataset.lang===l?'':'none');
+  document.getElementById('html-root').lang=l;
+  localStorage.setItem('ef-lang',l);
+}
+const s=localStorage.getItem('ef-lang')||'en';setLang(s);
+</script>
+</body>
+</html>

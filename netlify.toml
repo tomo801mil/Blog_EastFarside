@@ -1,0 +1,35 @@
+# ============================================================
+# Netlify 設定ファイル
+# ============================================================
+
+[build]
+  publish = "."        # リポジトリルートをそのまま公開
+
+# リダイレクト設定
+[[redirects]]
+  from = "/articles/*"
+  to   = "/articles/:splat"
+  status = 200
+
+# カスタムヘッダー（SEO・セキュリティ）
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, immutable"

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Terms of Use for EastFarside — rules and conditions for using this travel guide website."/>
+  <title>Terms of Use | EastFarside</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .legal-hero{padding:calc(var(--header-h)+60px) 0 50px;background:var(--ink);text-align:center;position:relative;overflow:hidden;}
+    .legal-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(45,122,110,.2),transparent 60%),radial-gradient(ellipse at 80% 30%,rgba(200,136,42,.12),transparent 55%);pointer-events:none;}
+    .legal-hero-content{position:relative;z-index:2;}
+    .legal-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.2rem);color:#fff;font-weight:700;margin-bottom:10px;}
+    .legal-hero .subtitle{color:rgba(255,255,255,.55);font-size:.85rem;margin-top:6px;}
+    .legal-section{padding:72px 0 88px;background:var(--sand);}
+    .legal-layout{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;}
+    .legal-toc{position:sticky;top:calc(var(--header-h)+24px);background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);}
+    .legal-toc h3{font-size:.7rem;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--amber);margin-bottom:14px;}
+    .legal-toc a{display:block;font-size:.8rem;color:var(--ink-mid);padding:5px 0 5px 10px;border-left:2px solid var(--border);margin-bottom:2px;transition:all .2s;}
+    .legal-toc a:hover{color:var(--ink);border-left-color:var(--amber);}
+    .legal-block{background:#fff;border-radius:var(--radius);padding:28px 32px;border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:20px;}
+    .legal-block:last-child{margin-bottom:0;}
+    .legal-block h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:9px;}
+    .legal-block h3{font-size:.9rem;font-weight:600;color:var(--ink);margin:18px 0 8px;}
+    .legal-block p{font-size:.85rem;line-height:1.85;color:var(--ink-mid);margin-bottom:10px;}
+    .legal-block p:last-child{margin-bottom:0;}
+    .legal-block ul{margin:8px 0 12px 0;padding-left:0;list-style:none;}
+    .legal-block li{font-size:.84rem;color:var(--ink-mid);padding:5px 0 5px 20px;position:relative;border-bottom:1px dashed var(--border);}
+    .legal-block li::before{content:'→';position:absolute;left:0;color:var(--amber);}
+    .legal-block li:last-child{border-bottom:none;}
+    .banner-teal{background:var(--teal-l);border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;}
+    .banner-teal p{font-size:.83rem;line-height:1.8;color:var(--ink-mid);}
+    .banner-amber{background:var(--amber-l);border-left:4px solid var(--amber);border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;}
+    .banner-amber p{font-size:.83rem;line-height:1.8;color:var(--ink-mid);}
+    .banner-dark{background:var(--ink);border-radius:10px;padding:20px 24px;margin:16px 0;}
+    .banner-dark p{font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.7);margin-bottom:6px;}
+    .banner-dark p:last-child{margin-bottom:0;}
+    .updated-badge{display:inline-flex;align-items:center;gap:6px;background:var(--amber-l);color:var(--amber);font-size:.72rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:50px;margin-bottom:20px;}
+    @media(max-width:900px){.legal-layout{grid-template-columns:1fr;}.legal-toc{position:static;}}
+    @media(max-width:640px){.legal-block{padding:20px;}}
+  </style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header id="site-header">
+  <a href="index.html" class="logo"><div class="logo-dot"></div>EastFarside</a>
+  <nav class="site-nav">
+    <a href="destinations.html" data-lang="en">Destinations</a><a href="destinations.html" data-lang="es">Destinos</a>
+    <a href="family.html" data-lang="en">Travel Types</a><a href="family.html" data-lang="es">Tipos</a>
+    <a href="article-kyoto.html" data-lang="en">Best Stays</a><a href="article-kyoto.html" data-lang="es">Alojamientos</a>
+    <a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="es">Sobre Nosotros</a>
+    <div class="lang-switch">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ── Hero ── -->
+<section class="legal-hero">
+  <div class="legal-hero-content container">
+    <h1 data-lang="en">Terms of Use</h1>
+    <h1 data-lang="es">Términos de Uso</h1>
+  </div>
+</section>
+
+<!-- ── Body ── -->
+<section class="legal-section">
+  <div class="container">
+    <div class="legal-layout">
+
+      <!-- TOC EN -->
+      <aside class="legal-toc" data-lang="en">
+        <h3>Contents</h3>
+        <a href="#acceptance">1. Acceptance of Terms</a>
+        <a href="#use-of-site">2. Use of This Site</a>
+        <a href="#ai-content">3. AI-Generated Content</a>
+        <a href="#affiliate">4. Affiliate Links</a>
+        <a href="#ip">5. Intellectual Property</a>
+        <a href="#user-conduct">6. User Conduct</a>
+        <a href="#third-party">7. Third-Party Links</a>
+        <a href="#disclaimer">8. Disclaimer of Warranties</a>
+        <a href="#liability">9. Limitation of Liability</a>
+        <a href="#indemnification">10. Indemnification</a>
+        <a href="#governing-law">11. Governing Law</a>
+        <a href="#changes">12. Changes to Terms</a>
+        <a href="#contact">13. Contact Us</a>
+      </aside>
+
+      <!-- TOC ES -->
+      <aside class="legal-toc" data-lang="es">
+        <h3>Contenido</h3>
+        <a href="#acceptance">1. Aceptación de términos</a>
+        <a href="#use-of-site">2. Uso del sitio</a>
+        <a href="#ai-content">3. Contenido generado por IA</a>
+        <a href="#affiliate">4. Enlaces de afiliados</a>
+        <a href="#ip">5. Propiedad intelectual</a>
+        <a href="#user-conduct">6. Conducta del usuario</a>
+        <a href="#third-party">7. Enlaces de terceros</a>
+        <a href="#disclaimer">8. Renuncia de garantías</a>
+        <a href="#liability">9. Limitación de responsabilidad</a>
+        <a href="#indemnification">10. Indemnización</a>
+        <a href="#governing-law">11. Ley aplicable</a>
+        <a href="#changes">12. Cambios en los términos</a>
+        <a href="#contact">13. Contáctanos</a>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="legal-content">
+
+        <div class="updated-badge">
+          <span data-lang="en">Effective Date: January 1, 2026 &nbsp;·&nbsp; Last Updated: March 2026</span>
+          <span data-lang="es">Vigencia: 1 de enero de 2026 &nbsp;·&nbsp; Actualización: marzo 2026</span>
+        </div>
+
+        <!-- 1. Acceptance -->
+        <div class="legal-block" id="acceptance">
+          <h2 data-lang="en">1. Acceptance of Terms</h2>
+          <h2 data-lang="es">1. Aceptación de los Términos</h2>
+          <div class="banner-teal">
+            <p data-lang="en">By accessing or using EastFarside ("Site"), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use this Site.</p>
+            <p data-lang="es">Al acceder o usar EastFarside ("Sitio"), aceptas estar sujeto a estos Términos de Uso. Si no aceptas estos términos, por favor no uses este Sitio.</p>
+          </div>
+          <p data-lang="en">These Terms of Use apply to all visitors and users of EastFarside. They should be read together with our <a href="privacy-policy.html" style="color:var(--teal)">Privacy Policy</a> and <a href="disclaimer.html" style="color:var(--teal)">Disclaimer</a>, which are incorporated herein by reference.</p>
+          <p data-lang="es">Estos Términos de Uso se aplican a todos los visitantes y usuarios de EastFarside. Deben leerse junto con nuestra <a href="privacy-policy.html" style="color:var(--teal)">Política de Privacidad</a> y <a href="disclaimer.html" style="color:var(--teal)">Descargo de Responsabilidad</a>, incorporados aquí por referencia.</p>
+        </div>
+
+        <!-- 2. Use of Site -->
+        <div class="legal-block" id="use-of-site">
+          <h2 data-lang="en">2. Use of This Site</h2>
+          <h2 data-lang="es">2. Uso de Este Sitio</h2>
+          <p data-lang="en">EastFarside grants you a limited, non-exclusive, non-transferable license to access and use this Site for personal, non-commercial purposes. This license does not include:</p>
+          <p data-lang="es">EastFarside te otorga una licencia limitada, no exclusiva e intransferible para acceder y usar este Sitio con fines personales y no comerciales. Esta licencia no incluye:</p>
+          <ul>
+            <li data-lang="en">Reselling or commercial use of the Site or its content</li>
+            <li data-lang="es">Reventa o uso comercial del Sitio o su contenido</li>
+            <li data-lang="en">Downloading or copying content for the benefit of another business</li>
+            <li data-lang="es">Descarga o copia de contenido en beneficio de otro negocio</li>
+            <li data-lang="en">Use of data mining, robots, or similar data gathering tools</li>
+            <li data-lang="es">Uso de minería de datos, robots u herramientas similares de recopilación de datos</li>
+            <li data-lang="en">Framing or mirroring any part of this Site without prior written consent</li>
+            <li data-lang="es">Encuadrar o reflejar cualquier parte del Sitio sin consentimiento previo por escrito</li>
+          </ul>
+          <p data-lang="en">EastFarside reserves the right to terminate access to the Site for any user who violates these Terms of Use.</p>
+          <p data-lang="es">EastFarside se reserva el derecho de terminar el acceso al Sitio para cualquier usuario que viole estos Términos de Uso.</p>
+        </div>
+
+        <!-- 3. AI Content -->
+        <div class="legal-block" id="ai-content">
+          <h2 data-lang="en">3. AI-Generated Content</h2>
+          <h2 data-lang="es">3. Contenido Generado por IA</h2>
+          <div class="banner-dark">
+            <p data-lang="en">EastFarside uses artificial intelligence tools — including Google Gemini and OpenAI models — to assist in creating travel articles, destination guides, itineraries, and images. All AI-assisted content is reviewed by human editors before publication.</p>
+            <p data-lang="es">EastFarside usa herramientas de inteligencia artificial, incluidos Google Gemini y modelos de OpenAI, para crear artículos de viaje, guías de destinos, itinerarios e imágenes. Todo el contenido asistido por IA es revisado por editores humanos antes de publicarse.</p>
+          </div>
+          <p data-lang="en">By using this Site, you acknowledge that:</p>
+          <p data-lang="es">Al usar este Sitio, reconoces que:</p>
+          <ul>
+            <li data-lang="en">Some or all content may be AI-generated or AI-assisted</li>
+            <li data-lang="es">Parte o todo el contenido puede ser generado o asistido por IA</li>
+            <li data-lang="en">AI-generated content may contain errors, inaccuracies, or outdated information</li>
+            <li data-lang="es">El contenido generado por IA puede contener errores, inexactitudes o información desactualizada</li>
+            <li data-lang="en">AI-generated images are not actual photographs of the depicted locations</li>
+            <li data-lang="es">Las imágenes generadas por IA no son fotografías reales de los lugares representados</li>
+            <li data-lang="en">You should independently verify travel information before making travel plans</li>
+            <li data-lang="es">Debes verificar independientemente la información de viaje antes de hacer planes</li>
+          </ul>
+        </div>
+
+        <!-- 4. Affiliate Links -->
+        <div class="legal-block" id="affiliate">
+          <h2 data-lang="en">4. Affiliate Links</h2>
+          <h2 data-lang="es">4. Enlaces de Afiliados</h2>
+          <div class="banner-amber">
+            <p data-lang="en"><strong>FTC Disclosure:</strong> EastFarside participates in affiliate programs including Booking.com, Viator, and Amazon Associates. We may earn commissions from qualifying purchases or bookings made through links on this Site, at no additional cost to you.</p>
+            <p data-lang="es"><strong>Divulgación FTC:</strong> EastFarside participa en programas de afiliados incluyendo Booking.com, Viator y Amazon Associates. Podemos ganar comisiones de compras o reservas calificadas a través de enlaces en este Sitio, sin costo adicional para ti.</p>
+          </div>
+          <p data-lang="en">Affiliate commissions help fund the continued operation of EastFarside. Our editorial recommendations are made independently of affiliate relationships. The inclusion of affiliate links does not constitute an endorsement of the linked products or services beyond what is expressly stated.</p>
+          <p data-lang="es">Las comisiones de afiliados ayudan a financiar la operación continua de EastFarside. Nuestras recomendaciones editoriales se hacen de forma independiente de las relaciones de afiliados. La inclusión de enlaces de afiliados no constituye un respaldo de los productos o servicios vinculados más allá de lo expresamente indicado.</p>
+        </div>
+
+        <!-- 5. Intellectual Property -->
+        <div class="legal-block" id="ip">
+          <h2 data-lang="en">5. Intellectual Property</h2>
+          <h2 data-lang="es">5. Propiedad Intelectual</h2>
+          <p data-lang="en">All content on EastFarside — including but not limited to text, articles, itineraries, guides, graphics, logos, and AI-generated images — is the property of EastFarside or its content licensors and is protected by applicable copyright and intellectual property laws.</p>
+          <p data-lang="es">Todo el contenido de EastFarside, incluidos textos, artículos, itinerarios, guías, gráficos, logotipos e imágenes generadas por IA, es propiedad de EastFarside o sus licenciantes de contenido y está protegido por las leyes de derechos de autor y propiedad intelectual aplicables.</p>
+          <h3 data-lang="en">Permitted Use</h3>
+          <h3 data-lang="es">Uso Permitido</h3>
+          <ul>
+            <li data-lang="en">Sharing links to EastFarside content is permitted and encouraged</li>
+            <li data-lang="es">Compartir enlaces al contenido de EastFarside está permitido y es bienvenido</li>
+            <li data-lang="en">Brief quotations with clear attribution to EastFarside are permitted</li>
+            <li data-lang="es">Las citas breves con atribución clara a EastFarside están permitidas</li>
+          </ul>
+          <h3 data-lang="en">Prohibited Use</h3>
+          <h3 data-lang="es">Uso Prohibido</h3>
+          <ul>
+            <li data-lang="en">Reproducing, republishing, or distributing content without written permission</li>
+            <li data-lang="es">Reproducir, republicar o distribuir contenido sin permiso escrito</li>
+            <li data-lang="en">Using EastFarside content to train AI models or build competing products</li>
+            <li data-lang="es">Usar contenido de EastFarside para entrenar modelos de IA o construir productos competidores</li>
+            <li data-lang="en">Removing or altering any copyright or trademark notices</li>
+            <li data-lang="es">Eliminar o alterar avisos de derechos de autor o marcas registradas</li>
+          </ul>
+        </div>
+
+        <!-- 6. User Conduct -->
+        <div class="legal-block" id="user-conduct">
+          <h2 data-lang="en">6. User Conduct</h2>
+          <h2 data-lang="es">6. Conducta del Usuario</h2>
+          <p data-lang="en">By using this Site, you agree not to:</p>
+          <p data-lang="es">Al usar este Sitio, aceptas no:</p>
+          <ul>
+            <li data-lang="en">Use the Site for any unlawful purpose or in violation of any applicable laws</li>
+            <li data-lang="es">Usar el Sitio para fines ilegales o en violación de leyes aplicables</li>
+            <li data-lang="en">Attempt to gain unauthorized access to any part of the Site or its infrastructure</li>
+            <li data-lang="es">Intentar obtener acceso no autorizado a cualquier parte del Sitio o su infraestructura</li>
+            <li data-lang="en">Transmit any viruses, malware, or other harmful code</li>
+            <li data-lang="es">Transmitir virus, malware u otro código dañino</li>
+            <li data-lang="en">Impersonate EastFarside or any individual associated with it</li>
+            <li data-lang="es">Suplantar a EastFarside o a cualquier persona asociada a él</li>
+            <li data-lang="en">Interfere with or disrupt the operation of the Site</li>
+            <li data-lang="es">Interferir o interrumpir el funcionamiento del Sitio</li>
+          </ul>
+        </div>
+
+        <!-- 7. Third-Party Links -->
+        <div class="legal-block" id="third-party">
+          <h2 data-lang="en">7. Third-Party Links</h2>
+          <h2 data-lang="es">7. Enlaces de Terceros</h2>
+          <p data-lang="en">This Site contains links to third-party websites including booking platforms, review sites, and travel service providers. These links are provided for your convenience only.</p>
+          <p data-lang="es">Este Sitio contiene enlaces a sitios web de terceros, incluidas plataformas de reservas, sitios de reseñas y proveedores de servicios de viaje. Estos enlaces se proporcionan únicamente por conveniencia.</p>
+          <p data-lang="en">EastFarside does not control and is not responsible for the content, privacy policies, or practices of any third-party sites. Accessing third-party sites through links on EastFarside is at your own risk. We encourage you to review the terms and privacy policies of any site you visit.</p>
+          <p data-lang="es">EastFarside no controla ni es responsable del contenido, las políticas de privacidad o las prácticas de sitios de terceros. Acceder a sitios de terceros a través de enlaces en EastFarside es bajo tu propio riesgo. Te recomendamos revisar los términos y políticas de privacidad de cualquier sitio que visites.</p>
+        </div>
+
+        <!-- 8. Disclaimer of Warranties -->
+        <div class="legal-block" id="disclaimer">
+          <h2 data-lang="en">8. Disclaimer of Warranties</h2>
+          <h2 data-lang="es">8. Renuncia de Garantías</h2>
+          <p data-lang="en">THIS SITE AND ITS CONTENT ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.</p>
+          <p data-lang="es">ESTE SITIO Y SU CONTENIDO SE PROPORCIONAN "TAL CUAL" Y "SEGÚN DISPONIBILIDAD" SIN GARANTÍAS DE NINGÚN TIPO, YA SEAN EXPRESAS O IMPLÍCITAS, INCLUYENDO PERO NO LIMITADO A GARANTÍAS IMPLÍCITAS DE COMERCIABILIDAD, IDONEIDAD PARA UN FIN PARTICULAR O NO INFRACCIÓN.</p>
+          <p data-lang="en">EastFarside does not warrant that the Site will be uninterrupted, error-free, or free of viruses or other harmful components. For full details, see our <a href="disclaimer.html" style="color:var(--teal)">Disclaimer</a>.</p>
+          <p data-lang="es">EastFarside no garantiza que el Sitio sea ininterrumpido, libre de errores o libre de virus u otros componentes dañinos. Para más detalles, consulta nuestro <a href="disclaimer.html" style="color:var(--teal)">Descargo de Responsabilidad</a>.</p>
+        </div>
+
+        <!-- 9. Limitation of Liability -->
+        <div class="legal-block" id="liability">
+          <h2 data-lang="en">9. Limitation of Liability</h2>
+          <h2 data-lang="es">9. Limitación de Responsabilidad</h2>
+          <p data-lang="en">TO THE FULLEST EXTENT PERMITTED BY LAW, EASTFARSIDE AND ITS OWNERS, EDITORS, AND CONTRIBUTORS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF, OR INABILITY TO USE, THIS SITE OR ITS CONTENT.</p>
+          <p data-lang="es">EN LA MEDIDA MÁXIMA PERMITIDA POR LA LEY, EASTFARSIDE Y SUS PROPIETARIOS, EDITORES Y COLABORADORES NO SERÁN RESPONSABLES DE DAÑOS INDIRECTOS, INCIDENTALES, ESPECIALES, CONSECUENTES O PUNITIVOS QUE SURJAN DE TU USO O IMPOSIBILIDAD DE USAR ESTE SITIO O SU CONTENIDO.</p>
+          <p data-lang="en">In no event shall EastFarside's total liability to you for all damages exceed the amount of $100 USD. Some jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, so the above limitations may not apply to you.</p>
+          <p data-lang="es">En ningún caso la responsabilidad total de EastFarside hacia ti por todos los daños superará $100 USD. Algunas jurisdicciones no permiten la exclusión o limitación de daños incidentales o consecuentes, por lo que las limitaciones anteriores pueden no aplicarse a ti.</p>
+        </div>
+
+        <!-- 10. Indemnification -->
+        <div class="legal-block" id="indemnification">
+          <h2 data-lang="en">10. Indemnification</h2>
+          <h2 data-lang="es">10. Indemnización</h2>
+          <p data-lang="en">You agree to indemnify, defend, and hold harmless EastFarside and its owners, editors, and contributors from and against any claims, liabilities, damages, losses, and expenses — including reasonable legal fees — arising out of or in connection with your violation of these Terms of Use or your use of the Site.</p>
+          <p data-lang="es">Aceptas indemnizar, defender y eximir de responsabilidad a EastFarside y sus propietarios, editores y colaboradores de y contra cualquier reclamación, responsabilidad, daño, pérdida y gasto, incluidos honorarios legales razonables, que surjan de o estén relacionados con tu violación de estos Términos de Uso o tu uso del Sitio.</p>
+        </div>
+
+        <!-- 11. Governing Law -->
+        <div class="legal-block" id="governing-law">
+          <h2 data-lang="en">11. Governing Law &amp; Dispute Resolution</h2>
+          <h2 data-lang="es">11. Ley Aplicable y Resolución de Disputas</h2>
+          <p data-lang="en">These Terms of Use shall be governed by and construed in accordance with the laws of the United States and the State of California, without regard to its conflict of law provisions.</p>
+          <p data-lang="es">Estos Términos de Uso se regirán e interpretarán de acuerdo con las leyes de los Estados Unidos y el Estado de California, sin tener en cuenta sus disposiciones sobre conflictos de leyes.</p>
+          <p data-lang="en">Any dispute arising from or relating to these Terms of Use or your use of the Site shall be resolved through good-faith negotiation. If a dispute cannot be resolved through negotiation, it shall be submitted to binding arbitration in accordance with the rules of the American Arbitration Association.</p>
+          <p data-lang="es">Cualquier disputa que surja de o esté relacionada con estos Términos de Uso o tu uso del Sitio se resolverá mediante negociación de buena fe. Si una disputa no puede resolverse mediante negociación, se someterá a arbitraje vinculante de conformidad con las reglas de la Asociación Americana de Arbitraje.</p>
+          <p data-lang="en">You agree that any claims shall be brought in your individual capacity and not as a plaintiff or class member in any purported class action, collective action, or representative proceeding.</p>
+          <p data-lang="es">Aceptas que cualquier reclamación se presentará en tu capacidad individual y no como demandante o miembro de clase en ninguna acción colectiva o procedimiento representativo.</p>
+        </div>
+
+        <!-- 12. Changes -->
+        <div class="legal-block" id="changes">
+          <h2 data-lang="en">12. Changes to Terms</h2>
+          <h2 data-lang="es">12. Cambios en los Términos</h2>
+          <p data-lang="en">EastFarside reserves the right to modify these Terms of Use at any time. Changes will be effective immediately upon posting to the Site. The "Last Updated" date at the top of this page will be revised accordingly.</p>
+          <p data-lang="es">EastFarside se reserva el derecho de modificar estos Términos de Uso en cualquier momento. Los cambios serán efectivos de inmediato al publicarse en el Sitio. La fecha de "Última actualización" en la parte superior de esta página se revisará en consecuencia.</p>
+          <p data-lang="en">Your continued use of the Site after any changes to these Terms constitutes your acceptance of the revised Terms. We encourage you to review these Terms periodically.</p>
+          <p data-lang="es">Tu uso continuado del Sitio después de cualquier cambio en estos Términos constituye tu aceptación de los Términos revisados. Te recomendamos revisar estos Términos periódicamente.</p>
+        </div>
+
+        <!-- 13. Contact -->
+        <div class="legal-block" id="contact">
+          <h2 data-lang="en">13. Contact Us</h2>
+          <h2 data-lang="es">13. Contáctanos</h2>
+          <p data-lang="en">If you have any questions about these Terms of Use, please contact us:</p>
+          <p data-lang="es">Si tienes preguntas sobre estos Términos de Uso, contáctanos:</p>
+          <ul>
+            <li data-lang="en">Email: <a href="mailto:hello@eastfarside.com" style="color:var(--teal)">hello@eastfarside.com</a></li>
+            <li data-lang="es">Correo: <a href="mailto:hello@eastfarside.com" style="color:var(--teal)">hello@eastfarside.com</a></li>
+            <li data-lang="en">Privacy Policy: <a href="privacy-policy.html" style="color:var(--teal)">View our Privacy Policy</a></li>
+            <li data-lang="es">Política de Privacidad: <a href="privacy-policy.html" style="color:var(--teal)">Ver nuestra Política de Privacidad</a></li>
+            <li data-lang="en">Disclaimer: <a href="disclaimer.html" style="color:var(--teal)">View our Disclaimer</a></li>
+            <li data-lang="es">Descargo de responsabilidad: <a href="disclaimer.html" style="color:var(--teal)">Ver nuestro Descargo</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /legal-content -->
+    </div><!-- /legal-layout -->
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="site-footer"><div class="container">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">🌏 EastFarside</div>
+      <div class="footer-socials">
+        <a href="https://x.com/EastFarside" class="social-icon">𝕏</a>
+        <a href="https://instagram.com/eastfarside" class="social-icon">📸</a>
+        <a href="#" class="social-icon">📌</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4 data-lang="en">Destinations</h4><h4 data-lang="es">Destinos</h4><ul><li><a href="destinations.html" data-lang="en">All Destinations</a><a href="destinations.html" data-lang="es">Todos los Destinos</a></li></ul></div>
+    <div class="footer-col"><h4 data-lang="en">Travel Types</h4><h4 data-lang="es">Tipos de Viaje</h4><ul><li><a href="family.html">👨‍👩‍👧 Family</a></li><li><a href="couple.html">💑 Couple</a></li><li><a href="girls.html">👭 Girls</a></li><li><a href="senior.html">🧓 Senior</a></li></ul></div>
+    <div class="footer-col"><h4>Info</h4><ul>
+      <li><a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="es">Sobre Nosotros</a></li>
+      <li><a href="privacy-policy.html" data-lang="en">Privacy Policy</a><a href="privacy-policy.html" data-lang="es">Política de Privacidad</a></li>
+      <li><a href="terms-of-use.html" data-lang="en">Terms of Use</a><a href="terms-of-use.html" data-lang="es">Términos de Uso</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 EastFarside.</span><a href="index.html">← Home</a></div>
+</div></footer>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>60));
+function setLang(l){
+  document.getElementById('btn-en').classList.toggle('active',l!=='es');
+  document.getElementById('btn-es').classList.toggle('active',l==='es');
+  document.querySelectorAll('[data-lang]').forEach(el=>el.style.display=el.dataset.lang===l?'':'none');
+  document.getElementById('html-root').lang=l;
+  localStorage.setItem('ef-lang',l);
+}
+const s=localStorage.getItem('ef-lang')||'en';setLang(s);
+</script>
+</body>
+</html>

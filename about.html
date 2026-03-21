@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>About | EastFarside</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .about-hero{padding:calc(var(--header-h)+60px) 0 50px;background:var(--ink);text-align:center;position:relative;overflow:hidden;}
+    .about-hero-bg{position:absolute;inset:0;background-image:url('C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/slide_bali_terraces_1774080246768.png');background-size:cover;background-position:center;filter:brightness(.35);}
+    .about-hero-content{position:relative;z-index:2;}
+    .about-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.5rem);color:#fff;font-weight:700;margin-bottom:10px;}
+    .about-hero p{color:rgba(255,255,255,.6);max-width:500px;margin:0 auto;}
+    .about-section{padding:72px 0;background:var(--sand);}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;}
+    .about-block{background:#fff;border-radius:var(--radius);padding:28px;border:1px solid var(--border);box-shadow:var(--shadow);}
+    .about-block h2{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:12px;}
+    .about-block p{font-size:.85rem;line-height:1.8;color:var(--ink-mid);margin-bottom:10px;}
+    .about-block ul{list-style:none;margin-top:8px;}
+    .about-block li{font-size:.83rem;color:var(--ink-mid);padding:5px 0 5px 18px;position:relative;border-bottom:1px dashed var(--border);}
+    .about-block li::before{content:'→';position:absolute;left:0;color:var(--amber);}
+    .about-block li:last-child{border-bottom:none;}
+    .ai-banner{background:var(--ink);color:#fff;padding:32px;border-radius:var(--radius);margin-top:36px;}
+    .ai-banner h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#f0d090;margin-bottom:12px;}
+    .ai-banner p{font-size:.85rem;line-height:1.8;color:rgba(255,255,255,.65);margin-bottom:8px;}
+    @media(max-width:768px){.about-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<header id="site-header">
+  <a href="index.html" class="logo"><div class="logo-dot"></div>EastFarside</a>
+  <nav class="site-nav">
+    <a href="destinations.html" data-lang="en">Destinations</a><a href="destinations.html" data-lang="es">Destinos</a>
+    <a href="family.html" data-lang="en">Travel Types</a><a href="family.html" data-lang="es">Tipos</a>
+    <a href="article-kyoto.html" data-lang="en">Best Stays</a><a href="article-kyoto.html" data-lang="es">Alojamientos</a>
+    <a href="about.html" class="active" data-lang="en">About</a><a href="about.html" class="active" data-lang="es">Sobre Nosotros</a>
+    <div class="lang-switch"><button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button><button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button></div>
+  </nav>
+</header>
+<section class="about-hero">
+  <div class="about-hero-bg"></div>
+  <div class="about-hero-content container">
+    <h1 data-lang="en">About EastFarside</h1><h1 data-lang="es">Sobre EastFarside</h1>
+    <p data-lang="en">An honest, AI-assisted travel guide focused on East & Southeast Asia — built for families, couples, girls and seniors.</p>
+    <p data-lang="es">Una guía de viaje honesta con asistencia de IA sobre el Este y Sudeste Asiático.</p>
+  </div>
+</section>
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-block">
+        <h2 data-lang="en">🌏 Our Mission</h2><h2 data-lang="es">🌏 Nuestra Misión</h2>
+        <p data-lang="en">EastFarside creates curated, model-course travel guides for East & Southeast Asia — designed for 4 travel styles: family, couple, girls trip, and senior travel.</p>
+        <p data-lang="es">EastFarside crea guías de viaje curadas para el Este y Sudeste Asiático — diseñadas para 4 estilos: familia, pareja, amigas y viajeros mayores.</p>
+        <p data-lang="en">We focus on <strong>practical itineraries</strong> with honest accommodation and activity recommendations.</p>
+        <p data-lang="es">Nos enfocamos en <strong>itinerarios prácticos</strong> con recomendaciones honestas de alojamiento y actividades.</p>
+      </div>
+      <div class="about-block" id="ai">
+        <h2>🤖 AI Disclosure</h2>
+        <div class="ai-banner" style="margin:0;padding:20px;border-radius:8px;">
+          <h2 style="font-size:1.1rem;color:#f0d090;margin-bottom:8px;" data-lang="en">How We Use AI</h2>
+          <h2 style="font-size:1.1rem;color:#f0d090;margin-bottom:8px;" data-lang="es">Cómo Usamos la IA</h2>
+          <p data-lang="en">EastFarside uses AI technology to assist in researching destinations, drafting article content, and generating travel imagery. All content is reviewed and edited by human editors before publication.</p>
+          <p data-lang="es">EastFarside usa IA para investigar destinos, redactar contenido y generar imágenes de viaje. Todo el contenido es revisado por editores humanos antes de publicarse.</p>
+          <p data-lang="en">AI-generated images on this site are designed to represent real locations faithfully, using photographic references from each destination.</p>
+          <p data-lang="es">Las imágenes generadas por IA están diseñadas para representar fielmente los lugares reales, usando referencias fotográficas de cada destino.</p>
+        </div>
+      </div>
+      <div class="about-block" id="affiliate">
+        <h2 data-lang="en">💼 Affiliate Disclosure</h2><h2 data-lang="es">💼 Aviso de Afiliados</h2>
+        <p data-lang="en">Some links on EastFarside are affiliate links. When you book through them, we may earn a small commission — at no extra cost to you. This helps support the site.</p>
+        <p data-lang="es">Algunos enlaces en EastFarside son de afiliados. Si reservas a través de ellos, podemos ganar una pequeña comisión sin costo adicional para ti.</p>
+        <ul>
+          <li data-lang="en">Booking.com (hotel accommodations)</li><li data-lang="es">Booking.com (alojamientos)</li>
+          <li data-lang="en">Viator (tours & experiences)</li><li data-lang="es">Viator (tours y experiencias)</li>
+          <li data-lang="en">Affiliate links are always clearly disclosed</li><li data-lang="es">Los enlaces de afiliados siempre están claramente indicados</li>
+        </ul>
+      </div>
+      <div class="about-block" id="privacy">
+        <h2 data-lang="en">🔒 Privacy Policy</h2><h2 data-lang="es">🔒 Política de Privacidad</h2>
+        <p data-lang="en">EastFarside does not collect personal data. We use standard analytics (page views) to understand which content is helpful.</p>
+        <p data-lang="es">EastFarside no recopila datos personales. Usamos analíticas estándar (visitas de página) para entender qué contenido es útil.</p>
+        <ul>
+          <li data-lang="en">No email subscriptions</li><li data-lang="es">Sin suscripción de correo</li>
+          <li data-lang="en">No personal data stored</li><li data-lang="es">Sin almacenamiento de datos personales</li>
+          <li data-lang="en">Basic analytics only</li><li data-lang="es">Solo analíticas básicas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="disclaimer-bar">
+  <span data-lang="en">⚠️ <strong style="color:rgba(255,255,255,.7)">AI Disclosure:</strong> Content is AI-assisted and reviewed by human editors. <a href="#affiliate">Affiliate disclosure</a> applies to some links.</span>
+  <span data-lang="es">⚠️ Contenido asistido por IA y revisado por humanos. <a href="#affiliate">Aviso de afiliados</a> applies.</span>
+</div>
+<footer class="site-footer"><div class="container">
+  <div class="footer-inner">
+    <div><div class="footer-brand-name">🌏 EastFarside</div></div>
+    <div class="footer-col"><h4>Destinations</h4><ul><li><a href="destinations.html">All Destinations</a></li></ul></div>
+    <div class="footer-col"><h4>Travel Types</h4><ul><li><a href="family.html">👨‍👩‍👧 Family</a></li><li><a href="couple.html">💑 Couple</a></li><li><a href="girls.html">👭 Girls</a></li><li><a href="senior.html">🧓 Senior</a></li></ul></div>
+    <div class="footer-col"><h4>Info</h4><ul><li><a href="about.html">About</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-use.html">Terms of Use</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 EastFarside.</span><a href="index.html">← Home</a></div>
+</div></footer>
+<script>
+window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>60));
+function setLang(l){document.getElementById('btn-en').classList.toggle('active',l!=='es');document.getElementById('btn-es').classList.toggle('active',l==='es');document.querySelectorAll('[data-lang]').forEach(el=>el.style.display=el.dataset.lang===l?'':'none');document.getElementById('html-root').lang=l;localStorage.setItem('ef-lang',l);}
+const s=localStorage.getItem('ef-lang')||'en';if(s==='es')setLang('es');
+</script>
+</body></html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="EastFarside — Explore all East & Southeast Asia destinations by country." />
+  <title>Destinations | EastFarside</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .page-hero {
+      padding-top: calc(var(--header-h) + 60px);
+      padding-bottom: 60px;
+      background: var(--ink);
+      text-align: center;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/slide_japan_inari_1774080230751.png');
+      background-size: cover; background-position: center;
+      filter: brightness(.45) saturate(.8);
+    }
+    .page-hero { position: relative; overflow: hidden; }
+    .page-hero-content { position: relative; z-index: 2; }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      color: #fff; font-weight: 700; margin-bottom: 10px;
+    }
+    .page-hero p { color: rgba(255,255,255,.65); font-size:1rem; max-width: 520px; margin: 0 auto; }
+    .page-hero .breadcrumb {
+      color: rgba(255,255,255,.4); font-size: .75rem;
+      margin-bottom: 16px; letter-spacing: 1px; text-transform: uppercase;
+    }
+    .page-hero .breadcrumb a { color: var(--amber); }
+
+    .dest-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px; margin-top: 48px;
+    }
+    .dest-big-card {
+      position: relative; border-radius: var(--radius); overflow: hidden;
+      height: 280px; cursor: pointer; display: block;
+    }
+    .dest-big-card img { height: 100%; transition: transform .5s; }
+    .dest-big-card:hover img { transform: scale(1.06); }
+    .dest-big-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(26,26,46,.82) 100%);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 22px;
+      transition: background .3s;
+    }
+    .dest-big-card:hover .dest-big-overlay { background: linear-gradient(180deg, transparent 30%, rgba(45,122,110,.8) 100%); }
+    .dest-country-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: #fff; }
+    .dest-guides-count { font-size: .75rem; color: rgba(255,255,255,.6); margin-top: 3px; }
+    .dest-type-tags { display: flex; gap: 5px; margin-top: 8px; flex-wrap: wrap; }
+    .dest-type-tag { font-size: .68rem; padding: 3px 8px; border-radius: 50px; background: rgba(255,255,255,.15); color: rgba(255,255,255,.85); }
+
+    .region-section { padding: 72px 0; background: var(--sand); }
+    @media(max-width: 900px) { .dest-full-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width: 580px) { .dest-full-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header id="site-header">
+  <a href="index.html" class="logo"><div class="logo-dot"></div>EastFarside</a>
+  <nav class="site-nav">
+    <a href="destinations.html" class="active" data-lang="en">Destinations</a>
+    <a href="destinations.html" class="active" data-lang="es">Destinos</a>
+    <a href="family.html" data-lang="en">Travel Types</a>
+    <a href="family.html" data-lang="es">Tipos de Viaje</a>
+    <a href="article-kyoto.html" data-lang="en">Best Stays</a>
+    <a href="article-kyoto.html" data-lang="es">Alojamientos</a>
+    <a href="about.html" data-lang="en">About</a>
+    <a href="about.html" data-lang="es">Sobre Nosotros</a>
+    <div class="lang-switch">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content container">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span data-lang="en">Destinations</span><span data-lang="es">Destinos</span></div>
+    <h1 data-lang="en">Explore Asia</h1>
+    <h1 data-lang="es">Explora Asia</h1>
+    <p data-lang="en">12 destinations across East & Southeast Asia — from mountain temples to tropical islands.</p>
+    <p data-lang="es">12 destinos en el Este y Sudeste Asiático — de templos montañosos a islas tropicales.</p>
+  </div>
+</section>
+
+<section class="region-section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <p class="section-label" data-lang="en">All Destinations</p>
+        <p class="section-label" data-lang="es">Todos los Destinos</p>
+        <h2 class="section-title" data-lang="en">Choose Your Country</h2>
+        <h2 class="section-title" data-lang="es">Elige tu País</h2>
+      </div>
+    </div>
+    <div class="dest-full-grid">
+
+      <a href="article-kyoto.html" class="dest-big-card reveal" id="japan">
+        <img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_japan_kyoto_1774077071288.png" alt="Japan"/>
+        <div class="dest-big-overlay">
+          <div class="dest-country-name">🇯🇵 <span data-lang="en">Japan</span><span data-lang="es">Japón</span></div>
+          <div class="dest-guides-count" data-lang="en">24 guides · Tokyo, Kyoto, Osaka, Hiroshima</div>
+          <div class="dest-guides-count" data-lang="es">24 guías · Tokyo, Kioto, Osaka, Hiroshima</div>
+          <div class="dest-type-tags">
+            <span class="dest-type-tag">👨‍👩‍👧 Family</span><span class="dest-type-tag">💑 Couple</span><span class="dest-type-tag">👭 Girls</span><span class="dest-type-tag">🧓 Senior</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="article-kyoto.html" class="dest-big-card reveal" id="thailand" style="transition-delay:.07s">
+        <img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_thailand_temple_1774077100069.png" alt="Thailand"/>
+        <div class="dest-big-overlay">
+          <div class="dest-country-name">🇹🇭 <span data-lang="en">Thailand</span><span data-lang="es">Tailandia</span></div>
+          <div class="dest-guides-count" data-lang="en">18 guides · Bangkok, Chiang Mai, Phuket</div>
+          <div class="dest-guides-count" data-lang="es">18 guías · Bangkok, Chiang Mai, Phuket</div>
+          <div class="dest-type-tags">
+            <span class="dest-type-tag">👨‍👩‍👧 Family</span><span class="dest-type-tag">💑 Couple</span><span class="dest-type-tag">👭 Girls</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="family.html" class="dest-big-card reveal" id="bali" style="transition-delay:.1s">
+        <img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_bali_family_1774077085279.png" alt="Bali"/>
+        <div class="dest-big-overlay">
+          <div class="dest-country-name">🇮🇩 <span data-lang="en">Bali, Indonesia</span><span data-lang="es">Bali, Indonesia</span></div>
+          <div class="dest-guides-count" data-lang="en">16 guides · Ubud, Seminyak, Uluwatu</div>
+          <div class="dest-guides-count" data-lang="es">16 guías · Ubud, Seminyak, Uluwatu</div>
+          <div class="dest-type-tags">
+            <span class="dest-type-tag">👨‍👩‍👧 Family</span><span class="dest-type-tag">💑 Couple</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="couple.html" class="dest-big-card reveal" id="vietnam" style="transition-delay:.14s">
+        <img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_vietnam_halong_1774077115116.png" alt="Vietnam"/>
+        <div class="dest-big-overlay">
+          <div class="dest-country-name">🇻🇳 Vietnam</div>
+          <div class="dest-guides-count" data-lang="en">14 guides · Hanoi, Ha Long Bay, Ho Chi Minh</div>
+          <div class="dest-guides-count" data-lang="es">14 guías · Hanoi, Ha Long Bay, Ho Chi Minh</div>
+          <div class="dest-type-tags">
+            <span class="dest-type-tag">💑 Couple</span><span class="dest-type-tag">👭 Girls</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="couple.html" class="dest-big-card reveal" id="taiwan" style="transition-delay:.17s">
+        <img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_taiwan_couple_1774077151402.png" alt="Taiwan"/>
+        <div class="dest-big-overlay">
+          <div class="dest-country-name">🇹🇼 Taiwan</div>
+          <div class="dest-guides-count" data-lang="en">10 guides · Taipei, Jiufen, Sun Moon Lake</div>
+          <div class="dest-guides-count" data-lang="es">10 guías · Taipei, Jiufen, Sun Moon Lake</div>
+          <div class="dest-type-tags">
+            <span class="dest-type-tag">💑 Couple</span><span class="dest-type-tag">👭 Girls</span><span class="dest-type-tag">👨‍👩‍👧 Family</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="senior.html" class="dest-big-card reveal" id="korea" style="transition-delay:.2s">
+        <img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_korea_senior_1774077178950.png" alt="South Korea"/>
+        <div class="dest-big-overlay">
+          <div class="dest-country-name">🇰🇷 <span data-lang="en">South Korea</span><span data-lang="es">Corea del Sur</span></div>
+          <div class="dest-guides-count" data-lang="en">12 guides · Seoul, Busan, Jeju Island</div>
+          <div class="dest-guides-count" data-lang="es">12 guías · Seúl, Busan, Isla Jeju</div>
+          <div class="dest-type-tags">
+            <span class="dest-type-tag">🧓 Senior</span><span class="dest-type-tag">👭 Girls</span><span class="dest-type-tag">👨‍👩‍👧 Family</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<div class="disclaimer-bar">
+  <span data-lang="en">⚠️ <strong style="color:rgba(255,255,255,.7)">AI Disclosure:</strong> Articles are AI-assisted and reviewed by human editors. Some links are <a href="about.html#affiliate">affiliate links</a>. <a href="about.html">Full disclaimer →</a></span>
+  <span data-lang="es">⚠️ <strong style="color:rgba(255,255,255,.7)">Aviso IA:</strong> Artículos asistidos por IA. Algunos enlaces son de <a href="about.html#affiliate">afiliados</a>. <a href="about.html">Aviso completo →</a></span>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">🌏 EastFarside</div>
+        <div class="footer-socials">
+          <a href="#" class="social-icon">𝕏</a><a href="#" class="social-icon">📸</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang="en">Destinations</h4><h4 data-lang="es">Destinos</h4>
+        <ul>
+          <li><a href="#japan">Japan 🇯🇵</a></li>
+          <li><a href="#thailand">Thailand 🇹🇭</a></li>
+          <li><a href="#bali">Bali 🇮🇩</a></li>
+          <li><a href="#vietnam">Vietnam 🇻🇳</a></li>
+          <li><a href="#korea">South Korea 🇰🇷</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang="en">Travel Types</h4><h4 data-lang="es">Tipos</h4>
+        <ul>
+          <li><a href="family.html">👨‍👩‍👧 Family</a></li>
+          <li><a href="couple.html">💑 Couple</a></li>
+          <li><a href="girls.html">👭 Girls Trip</a></li>
+          <li><a href="senior.html">🧓 Senior</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang="en">Info</h4><h4 data-lang="es">Info</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="privacy-policy.html" data-lang="en">Privacy Policy</a><a href="privacy-policy.html" data-lang="es">Política de Privacidad</a></li>
+          <li><a href="terms-of-use.html" data-lang="en">Terms of Use</a><a href="terms-of-use.html" data-lang="es">Términos de Uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 EastFarside.</span><a href="index.html">← Home</a></div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 60);
+});
+function setLang(lang) {
+  const isES = lang === 'es';
+  document.getElementById('btn-en').classList.toggle('active', !isES);
+  document.getElementById('btn-es').classList.toggle('active', isES);
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = el.dataset.lang === lang ? '' : 'none';
+  });
+  document.getElementById('html-root').lang = lang;
+  localStorage.setItem('ef-lang', lang);
+}
+const saved = localStorage.getItem('ef-lang') || 'en';
+if (saved === 'es') setLang('es');
+const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

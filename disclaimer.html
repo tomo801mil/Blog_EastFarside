@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Disclaimer for EastFarside — AI content disclosure, affiliate disclosure, and travel information accuracy."/>
+  <title>Disclaimer | EastFarside</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .legal-hero{padding:calc(var(--header-h)+60px) 0 50px;background:var(--ink);text-align:center;position:relative;overflow:hidden;}
+    .legal-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 40%,rgba(160,69,90,.2),transparent 60%),radial-gradient(ellipse at 75% 70%,rgba(200,136,42,.15),transparent 55%);pointer-events:none;}
+    .legal-hero-content{position:relative;z-index:2;}
+    .legal-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.2rem);color:#fff;font-weight:700;margin-bottom:10px;}
+    .legal-hero .subtitle{color:rgba(255,255,255,.55);font-size:.85rem;margin-top:6px;}
+    .legal-section{padding:72px 0 88px;background:var(--sand);}
+    .legal-layout{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;}
+    .legal-toc{position:sticky;top:calc(var(--header-h)+24px);background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);}
+    .legal-toc h3{font-size:.7rem;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--amber);margin-bottom:14px;}
+    .legal-toc a{display:block;font-size:.8rem;color:var(--ink-mid);padding:5px 0 5px 10px;border-left:2px solid var(--border);margin-bottom:2px;transition:all .2s;}
+    .legal-toc a:hover{color:var(--ink);border-left-color:var(--amber);}
+    .legal-block{background:#fff;border-radius:var(--radius);padding:28px 32px;border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:20px;}
+    .legal-block:last-child{margin-bottom:0;}
+    .legal-block h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:9px;}
+    .legal-block h3{font-size:.9rem;font-weight:600;color:var(--ink);margin:18px 0 8px;}
+    .legal-block p{font-size:.85rem;line-height:1.85;color:var(--ink-mid);margin-bottom:10px;}
+    .legal-block p:last-child{margin-bottom:0;}
+    .legal-block ul{margin:8px 0 12px 0;padding-left:0;list-style:none;}
+    .legal-block li{font-size:.84rem;color:var(--ink-mid);padding:5px 0 5px 20px;position:relative;border-bottom:1px dashed var(--border);}
+    .legal-block li::before{content:'→';position:absolute;left:0;color:var(--amber);}
+    .legal-block li:last-child{border-bottom:none;}
+    .banner-ai{background:var(--ink);color:#fff;border-radius:10px;padding:20px 24px;margin:16px 0;}
+    .banner-ai h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#f0d090;margin-bottom:8px;}
+    .banner-ai p{font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.7);margin-bottom:6px;}
+    .banner-ai p:last-child{margin-bottom:0;}
+    .banner-affiliate{background:var(--amber-l);border-left:4px solid var(--amber);border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;}
+    .banner-affiliate p{font-size:.83rem;line-height:1.8;color:var(--ink-mid);}
+    .banner-warning{background:#fff3e0;border-left:4px solid #e65100;border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;}
+    .banner-warning p{font-size:.83rem;line-height:1.8;color:#5d2f0a;}
+    .updated-badge{display:inline-flex;align-items:center;gap:6px;background:var(--amber-l);color:var(--amber);font-size:.72rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:50px;margin-bottom:20px;}
+    @media(max-width:900px){.legal-layout{grid-template-columns:1fr;}.legal-toc{position:static;}}
+    @media(max-width:640px){.legal-block{padding:20px;}}
+  </style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header id="site-header">
+  <a href="index.html" class="logo"><div class="logo-dot"></div>EastFarside</a>
+  <nav class="site-nav">
+    <a href="destinations.html" data-lang="en">Destinations</a><a href="destinations.html" data-lang="es">Destinos</a>
+    <a href="family.html" data-lang="en">Travel Types</a><a href="family.html" data-lang="es">Tipos</a>
+    <a href="article-kyoto.html" data-lang="en">Best Stays</a><a href="article-kyoto.html" data-lang="es">Alojamientos</a>
+    <a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="es">Sobre Nosotros</a>
+    <div class="lang-switch">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ── Hero ── -->
+<section class="legal-hero">
+  <div class="legal-hero-content container">
+    <h1 data-lang="en">⚠️ Disclaimer</h1>
+    <h1 data-lang="es">⚠️ Descargo de Responsabilidad</h1>
+    <p class="subtitle" data-lang="en">Effective Date: January 1, 2026 &nbsp;·&nbsp; Last Updated: March 2026</p>
+    <p class="subtitle" data-lang="es">Fecha de vigencia: 1 de enero de 2026 &nbsp;·&nbsp; Última actualización: marzo de 2026</p>
+  </div>
+</section>
+
+<!-- ── Body ── -->
+<section class="legal-section">
+  <div class="container">
+    <div class="legal-layout">
+
+      <!-- Sidebar TOC (EN) -->
+      <aside class="legal-toc" data-lang="en">
+        <h3>Contents</h3>
+        <a href="#general">1. General Disclaimer</a>
+        <a href="#ai-content">2. AI-Generated Content</a>
+        <a href="#affiliate">3. Affiliate Links</a>
+        <a href="#travel-info">4. Travel Information</a>
+        <a href="#prices">5. Prices & Availability</a>
+        <a href="#no-advice">6. No Professional Advice</a>
+        <a href="#third-party">7. Third-Party Content</a>
+        <a href="#accuracy">8. Accuracy & Errors</a>
+        <a href="#liability">9. Limitation of Liability</a>
+        <a href="#contact">10. Contact Us</a>
+      </aside>
+
+      <!-- Sidebar TOC (ES) -->
+      <aside class="legal-toc" data-lang="es">
+        <h3>Contenido</h3>
+        <a href="#general">1. Descargo general</a>
+        <a href="#ai-content">2. Contenido generado por IA</a>
+        <a href="#affiliate">3. Enlaces de afiliados</a>
+        <a href="#travel-info">4. Información de viajes</a>
+        <a href="#prices">5. Precios y disponibilidad</a>
+        <a href="#no-advice">6. Sin asesoramiento profesional</a>
+        <a href="#third-party">7. Contenido de terceros</a>
+        <a href="#accuracy">8. Exactitud y errores</a>
+        <a href="#liability">9. Limitación de responsabilidad</a>
+        <a href="#contact">10. Contáctanos</a>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="legal-content">
+
+        <div class="updated-badge">
+          <span data-lang="en">📅 Last Updated: March 2026</span>
+          <span data-lang="es">📅 Última actualización: marzo 2026</span>
+        </div>
+
+        <!-- 1. General -->
+        <div class="legal-block" id="general">
+          <h2 data-lang="en">1. General Disclaimer</h2>
+          <h2 data-lang="es">1. Descargo de Responsabilidad General</h2>
+          <p data-lang="en">The information provided on EastFarside ("Site") is for general informational and entertainment purposes only. While we strive to keep content accurate and up to date, EastFarside makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or suitability of the information.</p>
+          <p data-lang="es">La información proporcionada en EastFarside ("Sitio") es solo para fines informativos y de entretenimiento general. Aunque nos esforzamos por mantener el contenido preciso y actualizado, EastFarside no hace representaciones ni garantías de ningún tipo, expresas o implícitas, sobre la integridad, exactitud, confiabilidad o idoneidad de la información.</p>
+          <p data-lang="en">Any reliance you place on such information is strictly at your own risk. EastFarside shall not be held responsible or liable for any loss or damage arising from the use of this Site.</p>
+          <p data-lang="es">Cualquier dependencia que deposites en dicha información es estrictamente bajo tu propio riesgo. EastFarside no será responsable de ninguna pérdida o daño que surja del uso de este Sitio.</p>
+        </div>
+
+        <!-- 2. AI Content -->
+        <div class="legal-block" id="ai-content">
+          <h2 data-lang="en">2. 🤖 AI-Generated Content</h2>
+          <h2 data-lang="es">2. 🤖 Contenido Generado por IA</h2>
+          <div class="banner-ai">
+            <h3 data-lang="en">Important: This site uses Artificial Intelligence to create content.</h3>
+            <h3 data-lang="es">Importante: Este sitio usa Inteligencia Artificial para crear contenido.</h3>
+            <p data-lang="en">Travel articles, destination guides, itineraries, and some images on EastFarside are created with the assistance of AI tools, including Google Gemini and OpenAI models. All AI-generated content is reviewed by human editors prior to publication.</p>
+            <p data-lang="es">Los artículos de viaje, guías de destinos, itinerarios y algunas imágenes en EastFarside se crean con la asistencia de herramientas de IA, incluidos Google Gemini y modelos de OpenAI. Todo el contenido generado por IA es revisado por editores humanos antes de publicarse.</p>
+            <p data-lang="en">Despite human review, AI-generated content may contain inaccuracies, outdated information, or errors. We strongly recommend verifying critical travel details — including visa requirements, entry restrictions, pricing, and health and safety conditions — through official sources before traveling.</p>
+            <p data-lang="es">A pesar de la revisión humana, el contenido generado por IA puede contener inexactitudes, información desactualizada o errores. Recomendamos encarecidamente verificar los detalles críticos de viaje, incluidos requisitos de visa, restricciones de entrada, precios y condiciones de salud y seguridad, a través de fuentes oficiales antes de viajar.</p>
+          </div>
+          <h3 data-lang="en">AI Image Disclosure</h3>
+          <h3 data-lang="es">Divulgación de Imágenes de IA</h3>
+          <p data-lang="en">Some images on this site are AI-generated. They are created to faithfully represent real locations using photographic references. Where applicable, AI-generated images are labeled. These images are <strong>not</strong> actual photographs of the depicted locations.</p>
+          <p data-lang="es">Algunas imágenes en este sitio son generadas por IA. Se crean para representar fielmente lugares reales usando referencias fotográficas. Donde corresponde, las imágenes generadas por IA están etiquetadas. Estas imágenes <strong>no</strong> son fotografías reales de los lugares representados.</p>
+        </div>
+
+        <!-- 3. Affiliate Links -->
+        <div class="legal-block" id="affiliate">
+          <h2 data-lang="en">3. 💼 Affiliate Link Disclosure</h2>
+          <h2 data-lang="es">3. 💼 Divulgación de Enlaces de Afiliados</h2>
+          <div class="banner-affiliate">
+            <p data-lang="en"><strong>FTC Disclosure (16 CFR Part 255):</strong> EastFarside is a participant in affiliate marketing programs. Some links on this website are affiliate links. This means that if you click on a link and make a purchase or booking, EastFarside may receive a commission from the merchant — at <em>no additional cost to you</em>.</p>
+            <p data-lang="es"><strong>Divulgación FTC (16 CFR Parte 255):</strong> EastFarside participa en programas de marketing de afiliados. Algunos enlaces en este sitio web son de afiliados. Esto significa que si haces clic en un enlace y realizas una compra o reserva, EastFarside puede recibir una comisión del comerciante, <em>sin costo adicional para ti</em>.</p>
+          </div>
+          <ul>
+            <li data-lang="en">Affiliate commissions help support the operation and development of this site</li>
+            <li data-lang="es">Las comisiones de afiliados ayudan a financiar la operación y desarrollo de este sitio</li>
+            <li data-lang="en">Our reviews and recommendations are never influenced by affiliate relationships</li>
+            <li data-lang="es">Nuestras reseñas y recomendaciones nunca son influenciadas por relaciones de afiliados</li>
+            <li data-lang="en">We only recommend services we believe are genuinely useful to travelers</li>
+            <li data-lang="es">Solo recomendamos servicios que creemos son genuinamente útiles para los viajeros</li>
+            <li data-lang="en">Affiliate relationships include: Booking.com, Viator, Amazon Associates</li>
+            <li data-lang="es">Las relaciones de afiliados incluyen: Booking.com, Viator, Amazon Associates</li>
+          </ul>
+        </div>
+
+        <!-- 4. Travel Information -->
+        <div class="legal-block" id="travel-info">
+          <h2 data-lang="en">4. ✈️ Travel Information Accuracy</h2>
+          <h2 data-lang="es">4. ✈️ Exactitud de Información de Viajes</h2>
+          <div class="banner-warning">
+            <p data-lang="en"><strong>Always verify before you travel.</strong> Travel conditions, visa requirements, entry restrictions, local laws, and health and safety situations can change rapidly. The information on EastFarside may not reflect the most current conditions.</p>
+            <p data-lang="es"><strong>Siempre verifica antes de viajar.</strong> Las condiciones de viaje, requisitos de visa, restricciones de entrada, leyes locales y situaciones de salud y seguridad pueden cambiar rápidamente. La información en EastFarside puede no reflejar las condiciones más actuales.</p>
+          </div>
+          <p data-lang="en">For the most up-to-date travel information, please consult:</p>
+          <p data-lang="es">Para la información de viaje más actualizada, consulta:</p>
+          <ul>
+            <li data-lang="en">U.S. Department of State Travel Advisories — <a href="https://travel.state.gov" target="_blank" rel="noopener" style="color:var(--teal)">travel.state.gov</a></li>
+            <li data-lang="es">Avisos de Viaje del Departamento de Estado de EE.UU. — <a href="https://travel.state.gov" target="_blank" rel="noopener" style="color:var(--teal)">travel.state.gov</a></li>
+            <li data-lang="en">CDC Travel Health — <a href="https://wwwnc.cdc.gov/travel" target="_blank" rel="noopener" style="color:var(--teal)">wwwnc.cdc.gov/travel</a></li>
+            <li data-lang="es">Salud en Viajes del CDC — <a href="https://wwwnc.cdc.gov/travel" target="_blank" rel="noopener" style="color:var(--teal)">wwwnc.cdc.gov/travel</a></li>
+            <li data-lang="en">The official embassy or consulate of your destination country</li>
+            <li data-lang="es">La embajada o consulado oficial de tu país de destino</li>
+          </ul>
+        </div>
+
+        <!-- 5. Prices -->
+        <div class="legal-block" id="prices">
+          <h2 data-lang="en">5. 💰 Prices &amp; Availability</h2>
+          <h2 data-lang="es">5. 💰 Precios y Disponibilidad</h2>
+          <p data-lang="en">All prices, rates, and availability information mentioned on EastFarside are approximate and subject to change without notice. Actual prices at the time of booking may differ from those referenced on this site.</p>
+          <p data-lang="es">Todos los precios, tarifas e información de disponibilidad mencionados en EastFarside son aproximados y están sujetos a cambios sin previo aviso. Los precios reales al momento de la reserva pueden diferir de los referenciados en este sitio.</p>
+          <p data-lang="en">EastFarside is not responsible for any discrepancies between published prices and the actual prices charged by hotels, tour operators, airlines, or any other service providers.</p>
+          <p data-lang="es">EastFarside no es responsable de ninguna discrepancia entre los precios publicados y los precios reales cobrados por hoteles, operadores turísticos, aerolíneas u otros proveedores de servicios.</p>
+        </div>
+
+        <!-- 6. No Professional Advice -->
+        <div class="legal-block" id="no-advice">
+          <h2 data-lang="en">6. 🚫 No Professional Advice</h2>
+          <h2 data-lang="es">6. 🚫 Sin Asesoramiento Profesional</h2>
+          <p data-lang="en">The content on EastFarside is provided for general informational purposes only and does not constitute professional advice of any kind, including but not limited to:</p>
+          <p data-lang="es">El contenido de EastFarside se proporciona únicamente con fines informativos generales y no constituye asesoramiento profesional de ningún tipo, incluido, entre otros:</p>
+          <ul>
+            <li data-lang="en">Medical or health advice — consult a licensed healthcare provider or travel medicine specialist</li>
+            <li data-lang="es">Asesoramiento médico o de salud — consulta a un proveedor de atención médica autorizado o especialista en medicina de viajes</li>
+            <li data-lang="en">Legal advice — consult a licensed attorney familiar with the relevant jurisdiction</li>
+            <li data-lang="es">Asesoramiento legal — consulta a un abogado con licencia familiarizado con la jurisdicción relevante</li>
+            <li data-lang="en">Financial advice — consult a licensed financial advisor</li>
+            <li data-lang="es">Asesoramiento financiero — consulta a un asesor financiero con licencia</li>
+            <li data-lang="en">Safety assessment — always conduct your own due diligence on destination safety</li>
+            <li data-lang="es">Evaluación de seguridad — siempre realiza tu propia diligencia sobre la seguridad del destino</li>
+          </ul>
+        </div>
+
+        <!-- 7. Third-Party -->
+        <div class="legal-block" id="third-party">
+          <h2 data-lang="en">7. 🔗 Third-Party Content &amp; Links</h2>
+          <h2 data-lang="es">7. 🔗 Contenido y Enlaces de Terceros</h2>
+          <p data-lang="en">EastFarside may contain links to third-party websites including booking platforms, review sites, and travel service providers. These links are provided for convenience only.</p>
+          <p data-lang="es">EastFarside puede contener enlaces a sitios web de terceros, incluidas plataformas de reservas, sitios de reseñas y proveedores de servicios de viaje. Estos enlaces se proporcionan únicamente por conveniencia.</p>
+          <p data-lang="en">EastFarside has no control over the content, privacy policies, or practices of any third-party site and does not endorse the views expressed within them. We are not responsible for any loss or damage arising from your use of third-party sites.</p>
+          <p data-lang="es">EastFarside no tiene control sobre el contenido, las políticas de privacidad o las prácticas de ningún sitio de terceros y no respalda las opiniones expresadas en ellos. No somos responsables de ninguna pérdida o daño que surja de tu uso de sitios de terceros.</p>
+        </div>
+
+        <!-- 8. Accuracy -->
+        <div class="legal-block" id="accuracy">
+          <h2 data-lang="en">8. 📋 Accuracy &amp; Errors</h2>
+          <h2 data-lang="es">8. 📋 Exactitud y Errores</h2>
+          <p data-lang="en">We make every effort to ensure that content on EastFarside is accurate at the time of publication. However, due to the use of AI-assisted content creation and the rapidly changing nature of travel information, errors may exist.</p>
+          <p data-lang="es">Hacemos todo lo posible para garantizar que el contenido de EastFarside sea preciso al momento de publicarse. Sin embargo, debido al uso de creación de contenido asistida por IA y la naturaleza cambiante de la información de viajes, pueden existir errores.</p>
+          <p data-lang="en">If you notice an inaccuracy or outdated information, please contact us so we can review and correct it promptly.</p>
+          <p data-lang="es">Si notas una inexactitud o información desactualizada, contáctanos para que podamos revisarla y corregirla de inmediato.</p>
+        </div>
+
+        <!-- 9. Liability -->
+        <div class="legal-block" id="liability">
+          <h2 data-lang="en">9. ⚖️ Limitation of Liability</h2>
+          <h2 data-lang="es">9. ⚖️ Limitación de Responsabilidad</h2>
+          <p data-lang="en">To the fullest extent permitted by applicable law, EastFarside, its owners, editors, and contributors shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+          <p data-lang="es">En la medida máxima permitida por la ley aplicable, EastFarside, sus propietarios, editores y colaboradores no serán responsables de ningún daño indirecto, incidental, especial, consecuente o punitivo, incluyendo pero no limitado a:</p>
+          <ul>
+            <li data-lang="en">Loss or damage arising from travel decisions made based on site content</li>
+            <li data-lang="es">Pérdida o daño que surja de decisiones de viaje tomadas basadas en el contenido del sitio</li>
+            <li data-lang="en">Loss or damage from third-party bookings or purchases made via affiliate links</li>
+            <li data-lang="es">Pérdida o daño de reservas o compras de terceros realizadas a través de enlaces de afiliados</li>
+            <li data-lang="en">Loss or damage from reliance on AI-generated content that contains errors</li>
+            <li data-lang="es">Pérdida o daño por depender de contenido generado por IA que contiene errores</li>
+            <li data-lang="en">Inability to access the Site or its content at any time</li>
+            <li data-lang="es">Incapacidad para acceder al Sitio o su contenido en cualquier momento</li>
+          </ul>
+          <p data-lang="en">This limitation of liability applies regardless of whether the claim is based on warranty, contract, tort, or any other legal theory.</p>
+          <p data-lang="es">Esta limitación de responsabilidad se aplica independientemente de si la reclamación se basa en garantía, contrato, agravio o cualquier otra teoría legal.</p>
+        </div>
+
+        <!-- 10. Contact -->
+        <div class="legal-block" id="contact">
+          <h2 data-lang="en">10. Contact Us</h2>
+          <h2 data-lang="es">10. Contáctanos</h2>
+          <p data-lang="en">If you have questions about this Disclaimer, found an inaccuracy in our content, or would like to report any issue, please contact us:</p>
+          <p data-lang="es">Si tienes preguntas sobre este Descargo de Responsabilidad, encontraste una inexactitud en nuestro contenido o deseas reportar algún problema, contáctanos:</p>
+          <ul>
+            <li data-lang="en">Email: <a href="mailto:hello@eastfarside.com" style="color:var(--teal)">hello@eastfarside.com</a></li>
+            <li data-lang="es">Correo: <a href="mailto:hello@eastfarside.com" style="color:var(--teal)">hello@eastfarside.com</a></li>
+            <li data-lang="en">Privacy Policy: <a href="privacy-policy.html" style="color:var(--teal)">View our Privacy Policy</a></li>
+            <li data-lang="es">Política de Privacidad: <a href="privacy-policy.html" style="color:var(--teal)">Ver nuestra Política de Privacidad</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /legal-content -->
+    </div><!-- /legal-layout -->
+  </div>
+</section>
+
+<!-- ── Disclaimer Bar ── -->
+<div class="disclaimer-bar">
+  <span data-lang="en">⚠️ <strong style="color:rgba(255,255,255,.7)">AI Disclosure:</strong> Content is AI-assisted and reviewed by human editors. <a href="privacy-policy.html">Privacy Policy</a> also applies.</span>
+  <span data-lang="es">⚠️ Contenido asistido por IA y revisado por humanos. También se aplica la <a href="privacy-policy.html">Política de Privacidad</a>.</span>
+</div>
+
+<!-- ── Footer ── -->
+<footer class="site-footer"><div class="container">
+  <div class="footer-inner">
+    <div><div class="footer-brand-name">🌏 EastFarside</div></div>
+    <div class="footer-col"><h4>Destinations</h4><ul><li><a href="destinations.html">All Destinations</a></li></ul></div>
+    <div class="footer-col"><h4>Travel Types</h4><ul><li><a href="family.html">👨‍👩‍👧 Family</a></li><li><a href="couple.html">💑 Couple</a></li><li><a href="girls.html">👭 Girls</a></li><li><a href="senior.html">🧓 Senior</a></li></ul></div>
+    <div class="footer-col"><h4>Info</h4><ul>
+      <li><a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="es">Sobre Nosotros</a></li>
+      <li><a href="privacy-policy.html" data-lang="en">Privacy Policy</a><a href="privacy-policy.html" data-lang="es">Política de Privacidad</a></li>
+      <li><a href="terms-of-use.html" data-lang="en">Terms of Use</a><a href="terms-of-use.html" data-lang="es">Términos de Uso</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 EastFarside.</span><a href="index.html">← Home</a></div>
+</div></footer>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>60));
+function setLang(l){
+  document.getElementById('btn-en').classList.toggle('active',l!=='es');
+  document.getElementById('btn-es').classList.toggle('active',l==='es');
+  document.querySelectorAll('[data-lang]').forEach(el=>el.style.display=el.dataset.lang===l?'':'none');
+  document.getElementById('html-root').lang=l;
+  localStorage.setItem('ef-lang',l);
+}
+const s=localStorage.getItem('ef-lang')||'en';if(s==='es')setLang('es');
+</script>
+</body>
+</html>
