@@ -32,3 +32,9 @@ dist/
 # Python（ローカル作業用スクリプトが入る場合）
 __pycache__/
 *.pyc
+
+# 日本語編集用ドラフト（ローカル確認専用 — Netlify にはデプロイしない）
+draft/
+
+# Blog Editor のデプロイキャッシュ（ローカル専用）
+.editor_deploy_cache.json

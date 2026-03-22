@@ -11,6 +11,12 @@
   to   = "/articles/:splat"
   status = 200
 
+# 日本語ドラフトは本番サイトで非公開（ローカル編集用）
+[[redirects]]
+  from   = "/draft/*"
+  to     = "/"
+  status = 302
+
 # カスタムヘッダー（SEO・セキュリティ）
 [[headers]]
   for = "/*"
