@@ -21,7 +21,6 @@
     .slide {
       position: absolute; inset: 0;
       background-size: cover; background-position: center;
-      /* parallax: will-change + transform driven by JS */
       will-change: transform, opacity;
       opacity: 0;
       transition: opacity 1.2s ease-in-out;
@@ -106,8 +105,39 @@
     }
     .filter-btn:hover { background: #a36e20; transform: translateY(-1px); }
 
+    /* ── Latest Articles ── */
+    .latest-section { padding: 72px 0; background: var(--cream); border-top: 1px solid var(--border); }
+    .latest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px; margin-top: 36px;
+    }
+    .latest-card {
+      background: #fff; border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      transition: transform .3s, box-shadow .3s;
+      text-decoration: none; color: inherit; display: block;
+    }
+    .latest-card:hover { transform: translateY(-5px); box-shadow: 0 14px 40px rgba(0,0,0,.12); }
+    .latest-img-wrap { height: 210px; overflow: hidden; }
+    .latest-img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .55s ease;
+    }
+    .latest-card:hover .latest-img { transform: scale(1.06); }
+    .latest-body { padding: 20px 22px 22px; }
+    .latest-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem; font-weight: 700; color: var(--ink);
+      line-height: 1.3; margin: 10px 0 8px;
+    }
+    .latest-desc {
+      font-size: .83rem; color: var(--ink-mid); line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
     /* ── Type Tabs ── */
-    .type-section { background: var(--cream); padding: 56px 0; border-bottom: 1px solid var(--border); }
+    .type-section { background: var(--sand); padding: 72px 0; border-top: 1px solid var(--border); }
     .type-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
     .type-tab {
       display: flex; align-items: center; gap: 7px;
@@ -121,7 +151,6 @@
     .type-emoji { font-size: 1.05rem; }
 
     /* ── Articles Mosaic ── */
-    .articles-section { padding: 72px 0; background: var(--sand); }
     .articles-mosaic {
       display: grid; grid-template-columns: repeat(12, 1fr);
       grid-auto-rows: auto; gap: 18px;
@@ -161,8 +190,8 @@
 
     /* ── Destinations Grid ── */
     .destinations-section { padding: 72px 0; background: var(--cream); border-top: 1px solid var(--border); }
-    .dest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 36px; }
-    .dest-card { position: relative; border-radius: 10px; overflow: hidden; height: 195px; cursor: pointer; }
+    .dest-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 36px; max-width: 680px; }
+    .dest-card { position: relative; border-radius: 10px; overflow: hidden; height: 220px; cursor: pointer; }
     .dest-card img { height: 100%; transition: transform .5s; }
     .dest-card:hover img { transform: scale(1.08); }
     .dest-overlay {
@@ -175,24 +204,20 @@
     .dest-flag { font-size: 1.4rem; margin-bottom: 4px; }
     .dest-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: #fff; }
     .dest-count { font-size: .7rem; color: rgba(255,255,255,.6); margin-top: 2px; }
-    .more-dests { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
-    .more-btn {
-      padding: 9px 18px; border: 1px solid var(--border); border-radius: 8px;
-      font-size: .8rem; color: var(--ink-mid); background: var(--sand);
-      transition: all .2s; cursor: pointer;
-    }
-    .more-btn:hover { background: var(--amber); color: #fff; border-color: var(--amber); }
 
     /* ── Responsive ── */
     @media (max-width: 1024px) {
       .art-card--lg, .art-card--sm { grid-column: span 12; min-height: 340px; }
       .art-card--md { grid-column: span 6; }
-      .dest-grid { grid-template-columns: repeat(2, 1fr); }
       .filter-bar { grid-template-columns: 1fr 1fr; }
+      .latest-grid { grid-template-columns: repeat(2, 1fr); }
+      .dest-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
     }
     @media (max-width: 640px) {
       .art-card--md { grid-column: span 12; }
       .filter-bar { grid-template-columns: 1fr; }
+      .latest-grid { grid-template-columns: 1fr; }
+      .dest-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -206,8 +231,8 @@
     <a href="destinations.html" data-lang="es">Destinos</a>
     <a href="family.html" data-lang="en">Travel Types</a>
     <a href="family.html" data-lang="es">Tipos de Viaje</a>
-    <a href="article-kyoto.html" data-lang="en">Best Stays</a>
-    <a href="article-kyoto.html" data-lang="es">Alojamientos</a>
+    <a href="articles/article-karuizawa.html" data-lang="en">Model Courses</a>
+    <a href="articles/article-karuizawa.html" data-lang="es">Itinerarios</a>
     <a href="about.html" data-lang="en">About</a>
     <a href="about.html" data-lang="es">Sobre Nosotros</a>
     <div class="lang-switch">
@@ -242,12 +267,7 @@
         <select class="filter-select" id="filter-region" onchange="applyFilter()">
           <option value="">— All Regions —</option>
           <option value="japan">Japan 🇯🇵</option>
-          <option value="bali">Bali, Indonesia 🇮🇩</option>
-          <option value="thailand">Thailand 🇹🇭</option>
-          <option value="vietnam">Vietnam 🇻🇳</option>
           <option value="taiwan">Taiwan 🇹🇼</option>
-          <option value="korea">South Korea 🇰🇷</option>
-          <option value="singapore">Singapore 🇸🇬</option>
         </select>
       </div>
       <div class="filter-group">
@@ -279,12 +299,69 @@
   </div>
 </section>
 
-<!-- ════ TRAVEL TYPE TABS ════ -->
+<!-- ════ LATEST ARTICLES ════ -->
+<section class="latest-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <p class="section-label" data-lang="en">Fresh from the Blog</p>
+        <p class="section-label" data-lang="es">Lo Último del Blog</p>
+        <h2 class="section-title" data-lang="en">Latest Articles</h2>
+        <h2 class="section-title" data-lang="es">Artículos Recientes</h2>
+      </div>
+    </div>
+    <div class="latest-grid">
+
+      <!-- Article 1: Karuizawa (newest) -->
+      <a href="articles/article-karuizawa.html" class="latest-card reveal">
+        <div class="latest-img-wrap">
+          <img src="images/hero/slide_japan_inari.png" alt="Karuizawa Japan" class="latest-img" />
+        </div>
+        <div class="latest-body">
+          <div class="art-tags">
+            <span class="tag-pill art-tag-r">Japan 🇯🇵</span>
+            <span class="tag-pill art-tag-t">💑 Couple</span>
+            <span class="tag-pill art-tag-g">👭 Girls</span>
+          </div>
+          <div class="latest-title" data-lang="en">Karuizawa 2-Night 3-Day Model Course</div>
+          <div class="latest-title" data-lang="es">Karuizawa: Itinerario 2 Noches 3 Días</div>
+          <p class="latest-desc" data-lang="en">Highland resort &amp; birch forest walks just 70 min from Tokyo — the perfect escape.</p>
+          <p class="latest-desc" data-lang="es">Resort de montaña y bosques de abedules a solo 70 min de Tokio.</p>
+          <div class="art-meta"><span>⏱ 8 min</span><span>🏡 Mid-range</span></div>
+        </div>
+      </a>
+
+      <!-- Article 2: Houtong -->
+      <a href="articles/article-houtong.html" class="latest-card reveal" style="transition-delay:.08s">
+        <div class="latest-img-wrap">
+          <img src="images/destinations/card_taiwan_couple.png" alt="Houtong Taiwan" class="latest-img" />
+        </div>
+        <div class="latest-body">
+          <div class="art-tags">
+            <span class="tag-pill art-tag-r">Taiwan 🇹🇼</span>
+            <span class="tag-pill art-tag-t">💑 Couple</span>
+            <span class="tag-pill art-tag-g">👭 Girls</span>
+          </div>
+          <div class="latest-title" data-lang="en">Taiwan 2-Night 3-Day: Cats &amp; Mines of Houtong</div>
+          <div class="latest-title" data-lang="es">Taiwán 2 Noches: Gatos y Minas de Houtong</div>
+          <p class="latest-desc" data-lang="en">Explore Taiwan's most charming cat village and historic mining ruins in one trip.</p>
+          <p class="latest-desc" data-lang="es">El encantador pueblo de gatos y las ruinas mineras históricas de Taiwán en un viaje.</p>
+          <div class="art-meta"><span>⏱ 7 min</span><span>🏡 Budget</span></div>
+        </div>
+      </a>
+
+    </div><!-- /latest-grid -->
+  </div>
+</section>
+
+<!-- ════ TRAVEL STYLE TABS ════ -->
 <section class="type-section">
   <div class="container">
     <div style="text-align:center; margin-bottom:8px">
       <p class="section-label" data-lang="en">Browse by Travel Style</p>
       <p class="section-label" data-lang="es">Explorar por Estilo</p>
+      <h2 class="section-title" style="text-align:center;margin-top:4px" data-lang="en">Model Courses</h2>
+      <h2 class="section-title" style="text-align:center;margin-top:4px" data-lang="es">Itinerarios Modelo</h2>
     </div>
     <div class="type-tabs">
       <a href="index.html" class="type-tab active" data-type="all">
@@ -309,11 +386,13 @@
       </a>
     </div>
 
-    <!-- Articles Mosaic -->
+    <!-- Articles Mosaic — sorted by popularity (analytics) -->
     <div class="articles-mosaic" id="mosaic">
-      <a href="article-kyoto.html" class="art-card art-card--lg reveal" data-type="couple girls" data-region="japan" data-budget="mid">
+
+      <!-- #1 Karuizawa -->
+      <a href="articles/article-karuizawa.html" class="art-card art-card--lg reveal" data-type="couple girls" data-region="japan" data-budget="mid">
         <div class="art-img-wrap">
-          <img src="../data/../data/../data/../data/../data/../data/../data/../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_japan_kyoto_1774077071288.png" alt="Kyoto Japan" class="art-img" />
+          <img src="images/hero/slide_japan_inari.png" alt="Karuizawa Japan" class="art-img" />
         </div>
         <div class="art-overlay"></div>
         <div class="art-body">
@@ -322,75 +401,30 @@
             <span class="tag-pill art-tag-t">💑 Couple</span>
             <span class="tag-pill art-tag-g">👭 Girls</span>
           </div>
-          <div class="art-title" data-lang="en">Kyoto 5-Day Model Course — Temples, Bamboo & Seasonal Cuisine</div>
-          <div class="art-title" data-lang="es">Itinerario 5 Días por Kioto — Templos, Bambú y Gastronomía</div>
-          <div class="art-meta"><span>⏱ 10 min</span><span>🏡 Mid-range</span></div>
+          <div class="art-title" data-lang="en">Karuizawa 2-Night 3-Day Model Course — Highland Resort &amp; Forest Walks</div>
+          <div class="art-title" data-lang="es">Karuizawa 2 Noches 3 Días — Resort de Montaña y Bosques</div>
+          <div class="art-meta"><span>⏱ 8 min</span><span>🏡 Mid-range</span></div>
         </div>
       </a>
 
-      <a href="couple.html" class="art-card art-card--sm reveal" data-type="couple" data-region="vietnam" data-budget="luxury" style="transition-delay:.08s">
+      <!-- #2 Houtong -->
+      <a href="articles/article-houtong.html" class="art-card art-card--sm reveal" data-type="couple girls" data-region="taiwan" data-budget="budget" style="transition-delay:.08s">
         <div class="art-img-wrap">
-          <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_vietnam_halong_1774077115116.png" alt="Ha Long Bay" class="art-img" />
-        </div>
-        <div class="art-overlay"></div>
-        <div class="art-body">
-          <div class="art-tags">
-            <span class="tag-pill art-tag-r">Vietnam 🇻🇳</span>
-            <span class="tag-pill art-tag-t">💑 Couple</span>
-          </div>
-          <div class="art-title" data-lang="en">Ha Long Bay 3-Day Cruise — The Ultimate Couple's Escape</div>
-          <div class="art-title" data-lang="es">Crucero 3 Días en Ha Long — Escapada Perfecta para Parejas</div>
-          <div class="art-meta"><span>⏱ 8 min</span><span>🏡 Luxury</span></div>
-        </div>
-      </a>
-
-      <a href="family.html" class="art-card art-card--md reveal" data-type="family" data-region="bali" data-budget="mid" style="transition-delay:.12s">
-        <div class="art-img-wrap">
-          <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_bali_family_1774077085279.png" alt="Bali Family" class="art-img" />
-        </div>
-        <div class="art-overlay"></div>
-        <div class="art-body">
-          <div class="art-tags">
-            <span class="tag-pill art-tag-r">Bali 🇮🇩</span>
-            <span class="tag-pill art-tag-t">👨‍👩‍👧 Family</span>
-          </div>
-          <div class="art-title" data-lang="en" style="font-size:1rem">Bali Family Week — Safe Zones & Kid-Friendly Stays</div>
-          <div class="art-title" data-lang="es" style="font-size:1rem">Bali en Familia — Zonas Seguras y Alojamientos</div>
-          <div class="art-meta"><span>⏱ 9 min</span><span>💰 Mid</span></div>
-        </div>
-      </a>
-
-      <a href="couple.html" class="art-card art-card--md reveal" data-type="couple girls" data-region="taiwan" data-budget="budget" style="transition-delay:.16s">
-        <div class="art-img-wrap">
-          <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_taiwan_couple_1774077151402.png" alt="Taiwan Night" class="art-img" />
+          <img src="images/destinations/card_taiwan_couple.png" alt="Houtong Taiwan" class="art-img" />
         </div>
         <div class="art-overlay"></div>
         <div class="art-body">
           <div class="art-tags">
             <span class="tag-pill art-tag-r">Taiwan 🇹🇼</span>
             <span class="tag-pill art-tag-t">💑 Couple</span>
+            <span class="tag-pill art-tag-g">👭 Girls</span>
           </div>
-          <div class="art-title" data-lang="en" style="font-size:1rem">Jiufen Night Walk — Lanterns, Rain & Romance</div>
-          <div class="art-title" data-lang="es" style="font-size:1rem">Jiufen de Noche — Linternas, Lluvia y Romance</div>
-          <div class="art-meta"><span>⏱ 6 min</span><span>💰 Budget</span></div>
+          <div class="art-title" data-lang="en">Taiwan 2-Night 3-Day — Cats &amp; Mines of Houtong</div>
+          <div class="art-title" data-lang="es">Taiwán 2 Noches — Gatos y Minas de Houtong</div>
+          <div class="art-meta"><span>⏱ 7 min</span><span>💰 Budget</span></div>
         </div>
       </a>
 
-      <a href="senior.html" class="art-card art-card--md reveal" data-type="senior" data-region="korea" data-budget="mid" style="transition-delay:.2s">
-        <div class="art-img-wrap">
-          <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_korea_senior_1774077178950.png" alt="Seoul Korea" class="art-img" />
-        </div>
-        <div class="art-overlay"></div>
-        <div class="art-body">
-          <div class="art-tags">
-            <span class="tag-pill art-tag-r">Korea 🇰🇷</span>
-            <span class="tag-pill art-tag-s">🧓 Senior</span>
-          </div>
-          <div class="art-title" data-lang="en" style="font-size:1rem">Seoul for Seniors — Easy Palaces, Accessible Stays</div>
-          <div class="art-title" data-lang="es" style="font-size:1rem">Seúl para Mayores — Palacios y Alojamientos Accesibles</div>
-          <div class="art-meta"><span>⏱ 7 min</span><span>💰 Mid</span></div>
-        </div>
-      </a>
     </div><!-- /mosaic -->
     <div style="text-align:center; margin-top:36px">
       <a href="destinations.html" class="view-all">
@@ -411,58 +445,28 @@
         <h2 class="section-title" data-lang="en">Where Will You Go?</h2>
         <h2 class="section-title" data-lang="es">¿A Dónde Vas?</h2>
       </div>
-      <a href="destinations.html" class="view-all">
-        <span data-lang="en">All Destinations →</span>
-        <span data-lang="es">Todos los Destinos →</span>
-      </a>
     </div>
     <div class="dest-grid">
-      <a href="destinations.html#japan" class="dest-card reveal">
-        <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_japan_kyoto_1774077071288.png" alt="Japan" />
+      <a href="articles/article-karuizawa.html" class="dest-card reveal">
+        <img src="images/destinations/card_japan_kyoto.png" alt="Japan" />
         <div class="dest-overlay">
           <div class="dest-flag">🇯🇵</div>
           <div class="dest-name" data-lang="en">Japan</div>
           <div class="dest-name" data-lang="es">Japón</div>
-          <div class="dest-count" data-lang="en">24 guides</div>
-          <div class="dest-count" data-lang="es">24 guías</div>
+          <div class="dest-count" data-lang="en">1 guide</div>
+          <div class="dest-count" data-lang="es">1 guía</div>
         </div>
       </a>
-      <a href="destinations.html#thailand" class="dest-card reveal" style="transition-delay:.08s">
-        <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_thailand_temple_1774077100069.png" alt="Thailand" />
+      <a href="articles/article-houtong.html" class="dest-card reveal" style="transition-delay:.08s">
+        <img src="images/destinations/card_taiwan_couple.png" alt="Taiwan" />
         <div class="dest-overlay">
-          <div class="dest-flag">🇹🇭</div>
-          <div class="dest-name" data-lang="en">Thailand</div>
-          <div class="dest-name" data-lang="es">Tailandia</div>
-          <div class="dest-count" data-lang="en">18 guides</div>
-          <div class="dest-count" data-lang="es">18 guías</div>
+          <div class="dest-flag">🇹🇼</div>
+          <div class="dest-name" data-lang="en">Taiwan</div>
+          <div class="dest-name" data-lang="es">Taiwán</div>
+          <div class="dest-count" data-lang="en">1 guide</div>
+          <div class="dest-count" data-lang="es">1 guía</div>
         </div>
       </a>
-      <a href="destinations.html#bali" class="dest-card reveal" style="transition-delay:.12s">
-        <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_bali_family_1774077085279.png" alt="Bali" />
-        <div class="dest-overlay">
-          <div class="dest-flag">🇮🇩</div>
-          <div class="dest-name">Bali</div>
-          <div class="dest-count" data-lang="en">16 guides</div>
-          <div class="dest-count" data-lang="es">16 guías</div>
-        </div>
-      </a>
-      <a href="destinations.html#singapore" class="dest-card reveal" style="transition-delay:.16s">
-        <img src="../.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_singapore_food_1774077164436.png" alt="Singapore" />
-        <div class="dest-overlay">
-          <div class="dest-flag">🇸🇬</div>
-          <div class="dest-name">Singapore</div>
-          <div class="dest-count" data-lang="en">12 guides</div>
-          <div class="dest-count" data-lang="es">12 guías</div>
-        </div>
-      </a>
-    </div>
-    <div class="more-dests">
-      <a href="destinations.html#vietnam" class="more-btn">🇻🇳 Vietnam</a>
-      <a href="destinations.html#taiwan" class="more-btn">🇹🇼 Taiwan</a>
-      <a href="destinations.html#korea" class="more-btn">🇰🇷 South Korea</a>
-      <a href="destinations.html#malaysia" class="more-btn">🇲🇾 Malaysia</a>
-      <a href="destinations.html#philippines" class="more-btn">🇵🇭 Philippines</a>
-      <a href="destinations.html#hongkong" class="more-btn">🇭🇰 Hong Kong</a>
     </div>
   </div>
 </section>
@@ -489,12 +493,8 @@
         <h4 data-lang="en">Destinations</h4>
         <h4 data-lang="es">Destinos</h4>
         <ul>
-          <li><a href="destinations.html#japan">Japan 🇯🇵</a></li>
-          <li><a href="destinations.html#thailand">Thailand 🇹🇭</a></li>
-          <li><a href="destinations.html#bali">Bali 🇮🇩</a></li>
-          <li><a href="destinations.html#vietnam">Vietnam 🇻🇳</a></li>
-          <li><a href="destinations.html#korea">South Korea 🇰🇷</a></li>
-          <li><a href="destinations.html#singapore">Singapore 🇸🇬</a></li>
+          <li><a href="articles/article-karuizawa.html">Japan 🇯🇵</a></li>
+          <li><a href="articles/article-houtong.html">Taiwan 🇹🇼</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -528,24 +528,24 @@
 /* ══ Slideshow Data ══ */
 const SLIDES = [
   {
-    src: 'C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/slide_japan_inari_1774080230751.png',
+    src: 'images/hero/slide_japan_inari.png',
     caption: 'Fushimi Inari · Kyoto, Japan'
   },
   {
-    src: 'C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/slide_bali_terraces_1774080246768.png',
+    src: 'images/destinations/card_taiwan_couple.png',
+    caption: 'Jiufen · Taiwan'
+  },
+  {
+    src: 'images/hero/slide_bali_terraces.png',
     caption: 'Tegallalang · Bali, Indonesia'
   },
   {
-    src: 'C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_thailand_temple_1774077100069.png',
+    src: 'images/destinations/card_thailand_temple.png',
     caption: 'Wat Arun · Bangkok, Thailand'
   },
   {
-    src: 'C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_vietnam_halong_1774077115116.png',
+    src: 'images/destinations/card_vietnam_halong.png',
     caption: 'Ha Long Bay · Vietnam'
-  },
-  {
-    src: 'C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_korea_senior_1774077178950.png',
-    caption: 'Gyeongbokgung · Seoul, Korea'
   }
 ];
 
@@ -555,13 +555,11 @@ const dotsEl = document.getElementById('slide-dots');
 let current = 0, timer;
 
 SLIDES.forEach((s, i) => {
-  // slide
   const div = document.createElement('div');
   div.className = 'slide' + (i === 0 ? ' active' : '');
   div.style.backgroundImage = `url('${s.src}')`;
   div.innerHTML = '<div class="slide-overlay"></div>';
   wrap.appendChild(div);
-  // dot
   const dot = document.createElement('div');
   dot.className = 'dot' + (i === 0 ? ' active' : '');
   dot.onclick = () => goTo(i);
@@ -584,9 +582,7 @@ timer = setInterval(next, 5000);
 /* ══ Parallax Scroll ══ */
 function onScroll() {
   const scrollY = window.scrollY;
-  // Header style
   document.getElementById('site-header').classList.toggle('scrolled', scrollY > 60);
-  // Parallax on active slide
   const slides = wrap.querySelectorAll('.slide');
   slides.forEach(s => {
     s.style.transform = `translateY(${scrollY * 0.38}px)`;
@@ -605,7 +601,6 @@ function setLang(lang) {
   document.getElementById('html-root').lang = lang;
   localStorage.setItem('ef-lang', lang);
 }
-// Restore saved lang
 const savedLang = localStorage.getItem('ef-lang') || 'en';
 if (savedLang === 'es') setLang('es');
 
