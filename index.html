@@ -592,13 +592,9 @@ window.addEventListener('scroll', onScroll, { passive: true });
 
 /* ══ Language Switch ══ */
 function setLang(lang) {
-  const isES = lang === 'es';
-  document.getElementById('btn-en').classList.toggle('active', !isES);
-  document.getElementById('btn-es').classList.toggle('active', isES);
-  document.querySelectorAll('[data-lang]').forEach(el => {
-    el.style.display = el.dataset.lang === lang ? '' : 'none';
-  });
   document.getElementById('html-root').lang = lang;
+  document.getElementById('btn-en').classList.toggle('active', lang !== 'es');
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
   localStorage.setItem('ef-lang', lang);
 }
 const savedLang = localStorage.getItem('ef-lang') || 'en';

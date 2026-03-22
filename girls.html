@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css"/>
   <style>
     .type-hero{position:relative;overflow:hidden;padding:calc(var(--header-h)+80px) 0 70px;background:var(--ink);text-align:center;}
-    .type-hero-bg{position:absolute;inset:0;background-image:url('C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_taiwan_couple_1774077151402.png');background-size:cover;background-position:center;filter:brightness(.4) saturate(.8);}
+    .type-hero-bg{position:absolute;inset:0;background-image:url('images/destinations/card_taiwan_couple.png');background-size:cover;background-position:center;filter:brightness(.4) saturate(.8);}
     .type-hero-content{position:relative;z-index:2;}.type-icon{font-size:3.5rem;margin-bottom:10px;}
     .type-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);color:#fff;font-weight:700;}
     .type-hero p{color:rgba(255,255,255,.65);max-width:500px;margin:12px auto 0;}
@@ -37,7 +37,7 @@
   <nav class="site-nav">
     <a href="destinations.html" data-lang="en">Destinations</a><a href="destinations.html" data-lang="es">Destinos</a>
     <a href="family.html" class="active" data-lang="en">Travel Types</a><a href="family.html" class="active" data-lang="es">Tipos</a>
-    <a href="article-kyoto.html" data-lang="en">Best Stays</a><a href="article-kyoto.html" data-lang="es">Alojamientos</a>
+    <a href="articles/article-kyoto.html" data-lang="en">Best Stays</a><a href="articles/article-kyoto.html" data-lang="es">Alojamientos</a>
     <a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="es">Sobre Nosotros</a>
     <div class="lang-switch"><button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button><button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button></div>
   </nav>
@@ -64,8 +64,8 @@
       <h2 class="section-title" data-lang="en">Best Girls Trip Destinations</h2><h2 class="section-title" data-lang="es">Mejores Destinos para Amigas</h2>
     </div></div>
     <div class="card-grid">
-      <a href="article-kyoto.html" class="card-article reveal">
-        <div class="card-thumb"><img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_japan_kyoto_1774077071288.png" alt="Kyoto Girls"/></div>
+      <a href="articles/article-kyoto.html" class="card-article reveal">
+        <div class="card-thumb"><img src="images/destinations/card_japan_kyoto.png" alt="Kyoto Girls"/></div>
         <div class="card-body">
           <div class="card-tags"><span class="tag-country">Japan 🇯🇵</span><span class="tag-girls">👭 Girls Trip</span></div>
           <div class="card-title" data-lang="en">Kyoto Girls Weekend — Kimono, Matcha & Hidden Gardens</div>
@@ -75,8 +75,8 @@
           <div class="card-meta"><span class="card-read" data-lang="en">Read More →</span><span class="card-read" data-lang="es">Leer Más →</span><span class="card-time">⏱ 8 min</span></div>
         </div>
       </a>
-      <a href="article-kyoto.html" class="card-article reveal" style="transition-delay:.07s">
-        <div class="card-thumb"><img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_thailand_temple_1774077100069.png" alt="Bangkok Girls"/></div>
+      <a href="articles/article-kyoto.html" class="card-article reveal" style="transition-delay:.07s">
+        <div class="card-thumb"><img src="images/destinations/card_thailand_temple.png" alt="Bangkok Girls"/></div>
         <div class="card-body">
           <div class="card-tags"><span class="tag-country">Thailand 🇹🇭</span><span class="tag-girls">👭 Girls Trip</span></div>
           <div class="card-title" data-lang="en">Bangkok Girls 4 Days — Rooftop Bars, Spas & Street Food</div>
@@ -86,8 +86,8 @@
           <div class="card-meta"><span class="card-read" data-lang="en">Read More →</span><span class="card-read" data-lang="es">Leer Más →</span><span class="card-time">⏱ 9 min</span></div>
         </div>
       </a>
-      <a href="article-kyoto.html" class="card-article reveal" style="transition-delay:.12s">
-        <div class="card-thumb"><img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_singapore_food_1774077164436.png" alt="Singapore Girls"/></div>
+      <a href="articles/article-kyoto.html" class="card-article reveal" style="transition-delay:.12s">
+        <div class="card-thumb"><img src="images/destinations/card_singapore_food.png" alt="Singapore Girls"/></div>
         <div class="card-body">
           <div class="card-tags"><span class="tag-country">Singapore 🇸🇬</span><span class="tag-girls">👭 Girls Trip</span></div>
           <div class="card-title" data-lang="en">Singapore Girls Weekend — Luxury Stays & Shopping</div>
@@ -115,7 +115,7 @@
 </div></footer>
 <script>
 window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>60));
-function setLang(l){document.getElementById('btn-en').classList.toggle('active',l!=='es');document.getElementById('btn-es').classList.toggle('active',l==='es');document.querySelectorAll('[data-lang]').forEach(el=>el.style.display=el.dataset.lang===l?'':'none');document.getElementById('html-root').lang=l;localStorage.setItem('ef-lang',l);}
+function setLang(l){document.getElementById('html-root').lang=l;document.getElementById('btn-en').classList.toggle('active',l!=='es');document.getElementById('btn-es').classList.toggle('active',l==='es');localStorage.setItem('ef-lang',l);}
 const s=localStorage.getItem('ef-lang')||'en';if(s==='es')setLang('es');
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));

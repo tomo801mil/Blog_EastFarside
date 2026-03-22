@@ -175,7 +175,8 @@ img { display: block; width: 100%; object-fit: cover; }
 .disclaimer-bar a { color: rgba(255,255,255,.65); border-bottom: 1px solid rgba(255,255,255,.2); }
 
 /* ── Language layers ─────────────── */
-[data-lang="es"] { display: none; }
+html[lang="en"] [data-lang="es"] { display: none !important; }
+html[lang="es"] [data-lang="en"] { display: none !important; }
 
 /* ── Responsive ─────────────────── */
 @media (max-width: 960px) {

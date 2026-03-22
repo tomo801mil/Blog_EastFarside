@@ -16,7 +16,7 @@
     }
     .page-hero-bg {
       position: absolute; inset: 0;
-      background-image: url('C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/slide_japan_inari_1774080230751.png');
+      background-image: url('images/hero/slide_japan_inari.png');
       background-size: cover; background-position: center;
       filter: brightness(.45) saturate(.8);
     }
@@ -71,8 +71,8 @@
     <a href="destinations.html" class="active" data-lang="es">Destinos</a>
     <a href="family.html" data-lang="en">Travel Types</a>
     <a href="family.html" data-lang="es">Tipos de Viaje</a>
-    <a href="article-kyoto.html" data-lang="en">Best Stays</a>
-    <a href="article-kyoto.html" data-lang="es">Alojamientos</a>
+    <a href="articles/article-kyoto.html" data-lang="en">Best Stays</a>
+    <a href="articles/article-kyoto.html" data-lang="es">Alojamientos</a>
     <a href="about.html" data-lang="en">About</a>
     <a href="about.html" data-lang="es">Sobre Nosotros</a>
     <div class="lang-switch">
@@ -105,8 +105,8 @@
     </div>
     <div class="dest-full-grid">
 
-      <a href="article-kyoto.html" class="dest-big-card reveal" id="japan">
-        <img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_japan_kyoto_1774077071288.png" alt="Japan"/>
+      <a href="articles/article-kyoto.html" class="dest-big-card reveal" id="japan">
+        <img src="images/destinations/card_japan_kyoto.png" alt="Japan"/>
         <div class="dest-big-overlay">
           <div class="dest-country-name">🇯🇵 <span data-lang="en">Japan</span><span data-lang="es">Japón</span></div>
           <div class="dest-guides-count" data-lang="en">24 guides · Tokyo, Kyoto, Osaka, Hiroshima</div>
@@ -117,8 +117,8 @@
         </div>
       </a>
 
-      <a href="article-kyoto.html" class="dest-big-card reveal" id="thailand" style="transition-delay:.07s">
-        <img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_thailand_temple_1774077100069.png" alt="Thailand"/>
+      <a href="articles/article-kyoto.html" class="dest-big-card reveal" id="thailand" style="transition-delay:.07s">
+        <img src="images/destinations/card_thailand_temple.png" alt="Thailand"/>
         <div class="dest-big-overlay">
           <div class="dest-country-name">🇹🇭 <span data-lang="en">Thailand</span><span data-lang="es">Tailandia</span></div>
           <div class="dest-guides-count" data-lang="en">18 guides · Bangkok, Chiang Mai, Phuket</div>
@@ -130,7 +130,7 @@
       </a>
 
       <a href="family.html" class="dest-big-card reveal" id="bali" style="transition-delay:.1s">
-        <img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_bali_family_1774077085279.png" alt="Bali"/>
+        <img src="images/destinations/card_bali_family.png" alt="Bali"/>
         <div class="dest-big-overlay">
           <div class="dest-country-name">🇮🇩 <span data-lang="en">Bali, Indonesia</span><span data-lang="es">Bali, Indonesia</span></div>
           <div class="dest-guides-count" data-lang="en">16 guides · Ubud, Seminyak, Uluwatu</div>
@@ -142,7 +142,7 @@
       </a>
 
       <a href="couple.html" class="dest-big-card reveal" id="vietnam" style="transition-delay:.14s">
-        <img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_vietnam_halong_1774077115116.png" alt="Vietnam"/>
+        <img src="images/destinations/card_vietnam_halong.png" alt="Vietnam"/>
         <div class="dest-big-overlay">
           <div class="dest-country-name">🇻🇳 Vietnam</div>
           <div class="dest-guides-count" data-lang="en">14 guides · Hanoi, Ha Long Bay, Ho Chi Minh</div>
@@ -154,7 +154,7 @@
       </a>
 
       <a href="couple.html" class="dest-big-card reveal" id="taiwan" style="transition-delay:.17s">
-        <img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_taiwan_couple_1774077151402.png" alt="Taiwan"/>
+        <img src="images/destinations/card_taiwan_couple.png" alt="Taiwan"/>
         <div class="dest-big-overlay">
           <div class="dest-country-name">🇹🇼 Taiwan</div>
           <div class="dest-guides-count" data-lang="en">10 guides · Taipei, Jiufen, Sun Moon Lake</div>
@@ -166,7 +166,7 @@
       </a>
 
       <a href="senior.html" class="dest-big-card reveal" id="korea" style="transition-delay:.2s">
-        <img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_korea_senior_1774077178950.png" alt="South Korea"/>
+        <img src="images/destinations/card_korea_senior.png" alt="South Korea"/>
         <div class="dest-big-overlay">
           <div class="dest-country-name">🇰🇷 <span data-lang="en">South Korea</span><span data-lang="es">Corea del Sur</span></div>
           <div class="dest-guides-count" data-lang="en">12 guides · Seoul, Busan, Jeju Island</div>
@@ -232,13 +232,9 @@ window.addEventListener('scroll', () => {
   document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 60);
 });
 function setLang(lang) {
-  const isES = lang === 'es';
-  document.getElementById('btn-en').classList.toggle('active', !isES);
-  document.getElementById('btn-es').classList.toggle('active', isES);
-  document.querySelectorAll('[data-lang]').forEach(el => {
-    el.style.display = el.dataset.lang === lang ? '' : 'none';
-  });
   document.getElementById('html-root').lang = lang;
+  document.getElementById('btn-en').classList.toggle('active', lang !== 'es');
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
   localStorage.setItem('ef-lang', lang);
 }
 const saved = localStorage.getItem('ef-lang') || 'en';

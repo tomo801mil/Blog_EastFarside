@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Un recorrido de 2 noches y 3 días por Taiwán: gatos y minas abandonadas. Pueblo de gatos de Houtong, Jiufen y aguas termales de Beitou. Guía de viaje de Taiwán por EastFarside."/>
+  <title>Un recorrido de 2 noches y 3 días por Taiwán: gatos y minas abandonadas | EastFarside</title>
+  <link rel="alternate" hreflang="en" href="https://eastfarside.com/articles/article-houtong.html"/>
+  <link rel="alternate" hreflang="es" href="https://eastfarside.com/es/articles/article-houtong.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../style.css"/>
+  <style>
+    /* Article layout */
+    .article-hero {
+      position: relative; height: 60vh; min-height: 440px; overflow: hidden;
+    }
+    .article-hero-img {
+      position: absolute; inset: 0;
+      background-image: url('../../images/destinations/card_taiwan_couple.png');
+      background-size: cover; background-position: center;
+      filter: brightness(.7);
+    }
+    .article-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(26,26,46,.9) 100%);
+    }
+    .article-hero-content {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+      padding: 36px 0;
+    }
+    .article-breadcrumb { color: rgba(255,255,255,.5); font-size: .73rem; margin-bottom: 12px; }
+    .article-breadcrumb a { color: var(--amber); }
+    .article-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem); color: #fff; font-weight: 700; line-height: 1.2;
+      margin-bottom: 14px; max-width: 700px;
+    }
+    .article-meta-bar { display: flex; gap: 16px; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 5px; font-size: .78rem; color: rgba(255,255,255,.6); }
+    .meta-tag { background: rgba(200,136,42,.85); color: #fff; font-size: .7rem; font-weight: 600; padding: 3px 9px; border-radius: 50px; }
+
+    /* Layout */
+    .article-layout {
+      display: grid; grid-template-columns: 1fr 320px; gap: 48px;
+      max-width: 1100px; margin: 0 auto; padding: 56px 32px;
+    }
+    .article-body { min-width: 0; }
+    .article-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 700; color: var(--ink);
+      margin: 36px 0 12px; border-left: 3px solid var(--amber);
+      padding-left: 14px;
+    }
+    .article-body p { font-size: .92rem; line-height: 1.85; color: var(--ink-mid); margin-bottom: 16px; }
+    .article-body strong { color: var(--ink); }
+
+    /* Day card */
+    .day-card {
+      background: #fff; border-radius: var(--radius); padding: 22px 24px;
+      border: 1px solid var(--border); margin: 22px 0;
+      box-shadow: var(--shadow);
+    }
+    .day-label {
+      display: inline-block; background: var(--ink); color: #fff;
+      font-size: .72rem; font-weight: 700; letter-spacing: 1px;
+      padding: 4px 12px; border-radius: 50px; margin-bottom: 10px;
+    }
+    .day-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .day-spots { list-style: none; }
+    .day-spots li { padding: 6px 0; border-bottom: 1px dashed var(--border); font-size: .85rem; color: var(--ink-mid); display: flex; gap: 8px; }
+    .day-spots li:last-child { border-bottom: none; }
+    .spot-time { color: var(--amber); font-size: .8rem; font-weight: 600; white-space: nowrap; min-width: 60px; }
+
+    /* Image gallery */
+    .article-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0; }
+    .gallery-img { border-radius: 8px; overflow: hidden; height: 190px; }
+    .gallery-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Affiliate sidebar */
+    .article-sidebar { position: sticky; top: calc(var(--header-h) + 20px); height: fit-content; }
+    .affil-card {
+      background: #fff; border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    .affil-header { background: var(--ink); padding: 14px 18px; }
+    .affil-header h3 { color: #fff; font-size: .85rem; font-weight: 600; }
+    .affil-body { padding: 16px 18px; }
+    .affil-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .affil-item:last-child { border-bottom: none; }
+    .affil-img { width: 64px; height: 64px; border-radius: 6px; overflow: hidden; flex-shrink: 0; }
+    .affil-img img { width: 100%; height: 100%; object-fit: cover; }
+    .affil-info h4 { font-size: .83rem; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+    .affil-price { font-size: .75rem; color: var(--muted); }
+    .affil-btn {
+      display: block; width: 100%; margin-top: 12px;
+      background: var(--amber); color: #fff; text-align: center;
+      padding: 10px; border-radius: 8px; font-size: .83rem; font-weight: 600;
+      transition: background .2s;
+    }
+    .affil-btn:hover { background: #a36e20; }
+    .affil-note { font-size: .68rem; color: var(--muted); margin-top: 6px; text-align: center; }
+
+    /* Info box */
+    .info-box { background: var(--teal-l); border-left: 3px solid var(--teal); border-radius: 0 8px 8px 0; padding: 16px 18px; margin: 24px 0; }
+    .info-box h4 { color: var(--teal); font-size: .85rem; font-weight: 700; margin-bottom: 6px; }
+    .info-box p { font-size: .82rem; color: var(--ink-mid); margin: 0; }
+
+    @media(max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="site-header">
+  <a href="../../index.html" class="logo"><div class="logo-dot"></div>EastFarside</a>
+  <nav class="site-nav">
+    <a href="../../destinations.html">Destinos</a>
+    <a href="../../couple.html">Estilo de viaje</a>
+    <a href="article-houtong.html" class="active">Alojamiento recomendado</a>
+    <a href="../../about.html">Sobre Nosotros</a>
+    <div class="lang-switch">
+      <a href="../../articles/article-houtong.html" class="lang-btn">EN</a>
+      <a href="article-houtong.html" class="lang-btn active">ES</a>
+    </div>
+  </nav>
+</header>
+
+<section class="article-hero">
+  <div class="article-hero-img"></div>
+  <div class="article-hero-overlay"></div>
+  <div class="article-hero-content">
+    <div class="container">
+      <div class="article-breadcrumb">
+        <a href="../../index.html">Inicio</a> › <a href="../../destinations.html#taiwan">Taiwán 🇹🇼</a> › Guía de Taipei y alrededores
+      </div>
+      <h1 class="article-heading">Un recorrido de 2 noches y 3 días por Taiwán: gatos y minas abandonadas<br/>Modelo de itinerario en el pueblo de gatos de Houtong, Jiufen y aguas termales de Beitou</h1>
+      <div class="article-meta-bar">
+        <span class="meta-item">🇹🇼 Taiwán, Ciudad Nueva de Taipéi a Taipéi</span>
+        <span class="meta-item">⏱ Se lee en 8 minutos</span>
+        <span class="meta-item">💰 Excelente relación calidad-precio</span>
+        <span class="meta-tag">💑 Parejas</span>
+        <span class="meta-tag">👭 Viaje de chicas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="article-layout">
+  <article class="article-body">
+    <p>猴硐 (Houtong), a 35 minutos en tren de Taipeh, es un raro pueblo de gatos donde coexisten minas en desuso y gatos callejeros. Combinando las luces de linterna de soñar de Jiufen y las aguas termales de azufre de Beitou, puedes disfrutar de "vistas ocultas" de Taiwán en un recorrido de 2 noches y 3 días. El coste de transporte es otro atractivo, ya que el viaje de ida y vuelta cuesta solo unos cientos de yenes.</p>
+
+    <div class="info-box">
+      <h4>📌 Mejor temporada</h4>
+      <p>De octubre a abril (otoño, invierno, primavera) es el momento más cómodo. De mayo a septiembre es temporada de tifones y puede haber calor extremo (más de 35℃). El pueblo de gatos está abierto todo el año y los gatos siguen activos incluso en días de lluvia.</p>
+    </div>
+
+    <h2>📅 Modelo de itinerario por día</h2>
+
+    <div class="day-card">
+      <span class="day-label">Día 1</span>
+      <div class="day-title">Llegada a Taipei &amp; Atardecer en Jiufen</div>
+      <ul class="day-spots">
+        <li><span class="spot-time">14:00</span>Check-in en el hotel en Taipéi (las áreas de MRT Songshan y Zhongxiao son convenientes)</li>
+        <li><span class="spot-time">16:00</span>Viaje a la estación Ruifang en TRA (aproximadamente 50 minutos desde la estación de Taipei, NT$76 y más)</li>
+        <li><span class="spot-time">17:30</span>🏮 Calle Vieja de Jiufen — El atardecer con faroles encendidos es el mejor momento. Experiencia de té en A-Mei Tea House, etc.</li>
+        <li><span class="spot-time">20:00</span>Regreso a Taipei desde la estación Ruifang, cena de comida local en el Mercado Nocturno de Raohe (Pan de pimienta, Costillas estofadas)</li>
+      </ul>
+    </div>
+
+    <div class="day-card">
+      <span class="day-label">Día 2</span>
+      <div class="day-title">Pueblo de gatos de Houtong &amp; Jinguashi, mar Yin-Yang</div>
+      <ul class="day-spots">
+        <li><span class="spot-time">09:00</span>Viaje a la estación Houtong en TRA (aproximadamente 35 minutos desde la estación de Taipei, NT$38)</li>
+        <li><span class="spot-time">09:45</span>🐱 Pueblo de gatos de Houtong — Interactúa libremente con los gatos sobre el puente. Tiendas de souvenirs con productos de gatos también están dispersas.</li>
+        <li><span class="spot-time">11:30</span>Translado a Ruifang para almorzar (restaurante local de fideos o arroz con costillas a partir de ¥400)</li>
+        <li><span class="spot-time">13:30</span>Jinguashi — Visita al Museo del Oro &amp; el complejo de hospedaje japonés.</li>
+        <li><span class="spot-time">15:30</span>🌊 Mar Yin-Yang — Una misteriosa bahía teñida de color verde azulado por el hierro (panorámica desde el mirador).</li>
+        <li><span class="spot-time">19:00</span>Regreso a Taipei para cenar en el Mercado Nocturno de Shilin (salchichas grandes, pollo frito gigante, etc.).</li>
+      </ul>
+    </div>
+
+    <div class="day-card">
+      <span class="day-label">Día 3</span>
+      <div class="day-title">Aguas termales de Beitou &amp; Calle Vieja de Tamsui</div>
+      <ul class="day-spots">
+        <li><span class="spot-time">09:00</span>Ve al spa de aguas termales de Beitou en MRT (aproximadamente 30 minutos desde la estación de Taipei).</li>
+        <li><span class="spot-time">09:30</span>♨️ Museo de Aguas Termales de Beitou (gratis) &amp; Baños de pies al aire libre (gratis) para calentar primero los pies.</li>
+        <li><span class="spot-time">11:00</span>Baños de día en una posada de aguas termales (a partir de NT$500, alquiler de toallas disponible).</li>
+        <li><span class="spot-time">13:00</span>Translado a Tamsui en MRT (aproximadamente 30 minutos).</li>
+        <li><span class="spot-time">13:30</span>Almuerzo en la Calle Vieja de Tamsui — No te olvides de probar "huevos de hierro" y "A-Gei".</li>
+        <li><span class="spot-time">15:30</span>Paseo por sitios para el atardecer a lo largo del río Tamsui → Regreso a la estación de Taipei para el camino de regreso.</li>
+      </ul>
+    </div>
+
+    <div class="article-gallery">
+      <div class="gallery-img"><img src="../../images/destinations/card_taiwan_couple.png" alt="Calles de Taiwán"/></div>
+      <div class="gallery-img"><img src="../../images/destinations/card_vietnam_halong.png" alt="Mar de Asia Oriental"/></div>
+    </div>
+
+    <h2>🏡 Alojamiento recomendado</h2>
+    <p>Establecerte en el centro de Taipei (áreas de MRT Zhongxiao y Songshan) te permite moverte fácilmente a Houtong, Jiufen, Beitou y Tamsui en tren. Si priorizas la relación calidad-precio, los hoteles de negocios en el área de Zhongxiao Fuxing a Nanjing Sanmin son una buena opción desde ¥5,000. Si deseas un poco más de lujo, también tienes la opción de hoteles de diseño en los alrededores de Taipei que son ideales para fotos en Instagram.</p>
+
+    <div class="info-box">
+      <h4>💡 Consejos de transporte</h4>
+      <p>El viaje de ida y vuelta de Taipei a Houtong cuesta NT$76 (aproximadamente ¥360). Si compras una tarjeta EasyCard (tarjeta IC), el costo del transporte se reduce en un 10%. También puedes usar el MRT del aeropuerto, lo que es muy conveniente.</p>
+    </div>
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="affil-card">
+      <div class="affil-header"><h3>🏡 Hoteles recomendados</h3></div>
+      <div class="affil-body">
+        <div class="affil-item">
+          <div class="affil-img"><img src="../../images/destinations/card_taiwan_couple.png" alt="Hotel"/></div>
+          <div class="affil-info">
+            <h4>Hotel Mitsui Garden Taipei Zhongxiao</h4>
+            <div class="affil-price">Desde NT$3,200 por noche · ⭐ 9.1</div>
+          </div>
+        </div>
+        <div class="affil-item">
+          <div class="affil-img"><img src="../../images/destinations/card_vietnam_halong.png" alt="Hotel"/></div>
+          <div class="affil-info">
+            <h4>Hotel Resonance Taipei</h4>
+            <div class="affil-price">Desde NT$4,500 por noche · ⭐ 9.3</div>
+          </div>
+        </div>
+        <a href="https://www.booking.com/city/tw/taipei.html" target="_blank" rel="noopener sponsored" class="affil-btn">Ver todas las opciones en Booking.com →</a>
+        <div class="affil-note">※ Enlace de afiliado. Al hacer una reserva, el sitio recibe una pequeña comisión (sin costo adicional para usted).</div>
+      </div>
+    </div>
+    <div class="affil-card">
+      <div class="affil-header"><h3>🎟 Experiencias recomendadas</h3></div>
+      <div class="affil-body">
+        <div class="affil-item">
+          <div class="affil-info">
+            <h4>🐱 Tour de medio día en Houtong &amp; Jiufen</h4>
+            <div class="affil-price">¥5,500 por persona (Viator)</div>
+          </div>
+        </div>
+        <div class="affil-item">
+          <div class="affil-info">
+            <h4>♨️ Experiencia privada en aguas termales de Beitou</h4>
+            <div class="affil-price">¥9,000 por persona (Viator)</div>
+          </div>
+        </div>
+        <a href="https://www.viator.com/Taipei/d5480-ttd" target="_blank" rel="noopener sponsored" class="affil-btn">Buscar experiencias en Taipei en Viator →</a>
+        <div class="affil-note">※ Enlace de afiliado.</div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div class="disclaimer-bar">
+  ⚠️ <strong>Divulgación de IA:</strong> Este artículo fue asistido por IA y revisado por un editor humano. Los enlaces de hoteles y experiencias son <a href="../../about.html#affiliate">enlaces de afiliados</a>. <a href="../../about.html">Más detalles aquí →</a>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">🌏 EastFarside</div>
+        <div class="footer-socials">
+          <a href="https://x.com/EastFarside" class="social-icon">𝕏</a>
+          <a href="https://instagram.com/eastfarside" class="social-icon">📸</a>
+          <a href="#" class="social-icon">📌</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Guía de Taiwán</h4>
+        <ul>
+          <li><a href="../../articles/article-houtong.html">Guía de Houtong y Jiufen</a></li>
+          <li><a href="../../destinations.html#taiwan">Guía de Taipei</a></li>
+          <li><a href="../../destinations.html#taiwan">Guía de Tainan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Estilo de viaje</h4>
+        <ul>
+          <li><a href="../../family.html">👨‍👩‍👧 Familia</a></li>
+          <li><a href="../../couple.html">💑 Parejas</a></li>
+          <li><a href="../../girls.html">👭 Viaje de chicas</a></li>
+          <li><a href="../../senior.html">🧓 Mayores</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="../../about.html">Sobre Nosotros</a></li>
+          <li><a href="../../privacy-policy.html">Política de privacidad</a></li>
+          <li><a href="../../terms-of-use.html">Términos de uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 EastFarside.</span>
+      <span>eastfarside.com · <a href="../../articles/article-houtong.html">EN</a> / <a href="article-houtong.html">ES</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 60));
+</script>
+</body>
+</html>

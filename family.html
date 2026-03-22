@@ -14,7 +14,7 @@
     }
     .type-hero-bg {
       position: absolute; inset: 0;
-      background-image: url('C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_bali_family_1774077085279.png');
+      background-image: url('images/destinations/card_bali_family.png');
       background-size: cover; background-position: center;
       filter: brightness(.4) saturate(.8);
     }
@@ -74,8 +74,8 @@
     <a href="destinations.html" data-lang="es">Destinos</a>
     <a href="family.html" class="active" data-lang="en">Travel Types</a>
     <a href="family.html" class="active" data-lang="es">Tipos de Viaje</a>
-    <a href="article-kyoto.html" data-lang="en">Best Stays</a>
-    <a href="article-kyoto.html" data-lang="es">Alojamientos</a>
+    <a href="articles/article-kyoto.html" data-lang="en">Best Stays</a>
+    <a href="articles/article-kyoto.html" data-lang="es">Alojamientos</a>
     <a href="about.html" data-lang="en">About</a>
     <a href="about.html" data-lang="es">Sobre Nosotros</a>
     <div class="lang-switch">
@@ -114,8 +114,8 @@
       </div>
     </div>
     <div class="card-grid">
-      <a href="article-kyoto.html" class="card-article reveal">
-        <div class="card-thumb"><img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_bali_family_1774077085279.png" alt="Bali Family"/></div>
+      <a href="articles/article-kyoto.html" class="card-article reveal">
+        <div class="card-thumb"><img src="images/destinations/card_bali_family.png" alt="Bali Family"/></div>
         <div class="card-body">
           <div class="card-tags"><span class="tag-country">Bali 🇮🇩</span><span class="tag-type-fam">👨‍👩‍👧 Family</span></div>
           <div class="card-title" data-lang="en">Bali Family Week — Safe Zones & Kid-Friendly Stays</div>
@@ -125,8 +125,8 @@
           <div class="card-meta"><span class="card-read" data-lang="en">Read More →</span><span class="card-read" data-lang="es">Leer Más →</span><span class="card-time">⏱ 9 min</span></div>
         </div>
       </a>
-      <a href="article-kyoto.html" class="card-article reveal" style="transition-delay:.07s">
-        <div class="card-thumb"><img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_japan_kyoto_1774077071288.png" alt="Japan Family"/></div>
+      <a href="articles/article-kyoto.html" class="card-article reveal" style="transition-delay:.07s">
+        <div class="card-thumb"><img src="images/destinations/card_japan_kyoto.png" alt="Japan Family"/></div>
         <div class="card-body">
           <div class="card-tags"><span class="tag-country">Japan 🇯🇵</span><span class="tag-type-fam">👨‍👩‍👧 Family</span></div>
           <div class="card-title" data-lang="en">Tokyo & Kyoto Family 8 Days — Theme Parks + Shrines</div>
@@ -136,8 +136,8 @@
           <div class="card-meta"><span class="card-read" data-lang="en">Read More →</span><span class="card-read" data-lang="es">Leer Más →</span><span class="card-time">⏱ 12 min</span></div>
         </div>
       </a>
-      <a href="article-kyoto.html" class="card-article reveal" style="transition-delay:.12s">
-        <div class="card-thumb"><img src="C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/card_singapore_food_1774077164436.png" alt="Singapore Family"/></div>
+      <a href="articles/article-kyoto.html" class="card-article reveal" style="transition-delay:.12s">
+        <div class="card-thumb"><img src="images/destinations/card_singapore_food.png" alt="Singapore Family"/></div>
         <div class="card-body">
           <div class="card-tags"><span class="tag-country">Singapore 🇸🇬</span><span class="tag-type-fam">👨‍👩‍👧 Family</span></div>
           <div class="card-title" data-lang="en">Singapore Family 5 Days — Gardens, Zoo & Sentosa</div>
@@ -181,10 +181,9 @@
 <script>
 window.addEventListener('scroll', () => document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 60));
 function setLang(l) {
+  document.getElementById('html-root').lang = l;
   document.getElementById('btn-en').classList.toggle('active', l!=='es');
   document.getElementById('btn-es').classList.toggle('active', l==='es');
-  document.querySelectorAll('[data-lang]').forEach(el => el.style.display = el.dataset.lang===l?'':'none');
-  document.getElementById('html-root').lang = l;
   localStorage.setItem('ef-lang', l);
 }
 const s=localStorage.getItem('ef-lang')||'en'; if(s==='es') setLang('es');

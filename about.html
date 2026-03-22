@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css"/>
   <style>
     .about-hero{padding:calc(var(--header-h)+60px) 0 50px;background:var(--ink);text-align:center;position:relative;overflow:hidden;}
-    .about-hero-bg{position:absolute;inset:0;background-image:url('C:/Users/kaihatsu/.gemini/antigravity/brain/362112da-7422-42b9-872a-0754a26100e1/slide_bali_terraces_1774080246768.png');background-size:cover;background-position:center;filter:brightness(.35);}
+    .about-hero-bg{position:absolute;inset:0;background-image:url('images/hero/slide_bali_terraces.png');background-size:cover;background-position:center;filter:brightness(.35);}
     .about-hero-content{position:relative;z-index:2;}
     .about-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.5rem);color:#fff;font-weight:700;margin-bottom:10px;}
     .about-hero p{color:rgba(255,255,255,.6);max-width:500px;margin:0 auto;}
@@ -33,7 +33,7 @@
   <nav class="site-nav">
     <a href="destinations.html" data-lang="en">Destinations</a><a href="destinations.html" data-lang="es">Destinos</a>
     <a href="family.html" data-lang="en">Travel Types</a><a href="family.html" data-lang="es">Tipos</a>
-    <a href="article-kyoto.html" data-lang="en">Best Stays</a><a href="article-kyoto.html" data-lang="es">Alojamientos</a>
+    <a href="articles/article-kyoto.html" data-lang="en">Best Stays</a><a href="articles/article-kyoto.html" data-lang="es">Alojamientos</a>
     <a href="about.html" class="active" data-lang="en">About</a><a href="about.html" class="active" data-lang="es">Sobre Nosotros</a>
     <div class="lang-switch"><button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button><button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button></div>
   </nav>
@@ -105,7 +105,7 @@
 </div></footer>
 <script>
 window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>60));
-function setLang(l){document.getElementById('btn-en').classList.toggle('active',l!=='es');document.getElementById('btn-es').classList.toggle('active',l==='es');document.querySelectorAll('[data-lang]').forEach(el=>el.style.display=el.dataset.lang===l?'':'none');document.getElementById('html-root').lang=l;localStorage.setItem('ef-lang',l);}
+function setLang(l){document.getElementById('html-root').lang=l;document.getElementById('btn-en').classList.toggle('active',l!=='es');document.getElementById('btn-es').classList.toggle('active',l==='es');localStorage.setItem('ef-lang',l);}
 const s=localStorage.getItem('ef-lang')||'en';if(s==='es')setLang('es');
 </script>
 </body></html>
