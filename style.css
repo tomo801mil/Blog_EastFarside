@@ -32,6 +32,9 @@ img { display: block; width: 100%; object-fit: cover; }
   --header-h: 64px;
 }
 
+/* Flag icons (replace Windows-incompatible emoji flags) */
+.flag-icon { height: 14px; width: auto; vertical-align: middle; border-radius: 2px; margin: 0 2px; display: inline-block; }
+
 /* ── Utility ─────────────────────── */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
 .tag-pill {

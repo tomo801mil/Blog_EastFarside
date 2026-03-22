@@ -1,2 +1,7 @@
-# EastFarside — maintenance mode
-/*  /maintenance.html  200!
+# EastFarside redirects
+# Old article paths → new model-course paths (permanent 301 redirect for SEO)
+/articles/article-karuizawa.html  /model-course/karuizawa.html  301
+/articles/article-houtong.html    /model-course/houtong.html    301
+/articles/article-kyoto.html      /model-course/kyoto.html      301
+/es/articles/article-karuizawa.html  /es/model-course/karuizawa.html  301
+/es/articles/article-houtong.html    /es/model-course/houtong.html    301
